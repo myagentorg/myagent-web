@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-class BuyerOrSeller extends Component {
+class ChooseBuyOrSell extends Component {
     render() {
         return (
             <div>
@@ -15,4 +15,4 @@ class BuyerOrSeller extends Component {
     }
 }
 
-export default BuyerOrSeller
+export default ChooseBuyOrSell
