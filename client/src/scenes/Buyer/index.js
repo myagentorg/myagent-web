@@ -6,7 +6,7 @@ import PropertyType from '../../components/PropertyType'
 import Budget from '../../components/Budget'
 import AlsoSelling from '../../components/AlsoSelling'
 import Contact from '../../components/Contact'
-// import Complete from '../../components/Complete'
+import Complete from '../../components/Complete'
 
 class Buyer extends Component {
     render() {
@@ -45,12 +45,14 @@ class Buyer extends Component {
                             </BuyerForm>
                         )}
                     />
-                    {/* <Route
+                    <Route
                         path="/buyer/complete"
-                        render={props => <BuyerForm {...props}>
-                            <Complete/>        
-                        </BuyerForm>}
-                    /> */}
+                        render={props => (
+                            <BuyerForm {...props}>
+                                <Complete />
+                            </BuyerForm>
+                        )}
+                    />
                 </Switch>
             </div>
         )
