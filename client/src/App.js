@@ -7,10 +7,12 @@ import BuyerOrSeller from './scenes/BuyerOrSeller'
 
 import { Switch, Route } from 'react-router-dom'
 
+import './App.css'
+
 class App extends Component {
     render() {
         return (
-            <div>
+            <div className="app__wrapper">
                 <Nav />
                 <Switch>
                     <Route exact path="/" component={Landing} />
