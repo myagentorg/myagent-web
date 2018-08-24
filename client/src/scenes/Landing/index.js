@@ -4,24 +4,40 @@ import { Link } from 'react-router-dom'
 
 import Input from '../../components/Input'
 import Button from '../../components/Button'
+import Warning from '../../components/Warning'
 
 import './index.css'
 
 class Landing extends Component {
     constructor() {
         super()
-        this.state = { location: '' }
+        this.state = {
+            location: '',
+            validated: false,
+            attemptFailed: false
+        }
     }
 
     handleChange = e => {
         const { name, value } = e.target
-        this.setState({ [name]: value })
+        this.setState({ [name]: value }, () => {
+            this.setState({ validated: this.state.location.length > 0 })
+        })
+    }
+
+    handleClick = () => {
+        if (!this.state.validated) {
+            this.setState({
+                attemptFailed: true
+            })
+        }
     }
 
     render() {
         const {
-            state: { location },
-            handleChange
+            state: { location, validated, attemptFailed },
+            handleChange,
+            handleClick
         } = this
         return (
             <div className="landing">
@@ -41,8 +57,16 @@ class Landing extends Component {
                             placeholder="Enter a city or neighborhood..."
                             value={location}
                             handleChange={handleChange}
+                            mode={attemptFailed ? 'red' : null}
                         />
-                        <Link to="/buyer-or-seller" tabIndex="-1">
+                        {attemptFailed ? (
+                            <Warning>This field is required</Warning>
+                        ) : null}
+                        <Link
+                            to={validated ? '/buyer-or-seller' : ''}
+                            tabIndex="-1"
+                            onClick={handleClick}
+                        >
                             <Button>Find Your Perfect Agent</Button>
                         </Link>
                     </div>
