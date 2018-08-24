@@ -10,7 +10,7 @@ class Nav extends Component {
     render() {
         return (
             <div className="nav">
-                <div className="nav__wrapper">
+                <div className="nav__wrapper utility-wrapper">
                     <Link to="/">
                         <img
                             className="nav__logo"
