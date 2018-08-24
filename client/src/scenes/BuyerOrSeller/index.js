@@ -3,35 +3,41 @@ import { Switch, Route } from 'react-router-dom'
 
 import FormContainer from '../../components/FormContainer'
 import PropertyType from '../../components/FormOptions/PropertyType'
-import Budget from '../../components/FormOptions/Budget'
+import Money from '../../components/FormOptions/Money'
 import Address from '../../components/FormOptions/Address'
-import AlsoSelling from '../../components/FormOptions/AlsoSelling'
+import AlsoOtherOption from '../../components/FormOptions/AlsoOtherOption'
 import Contact from '../../components/FormOptions/Contact'
 import Complete from '../../components/FormOptions/Complete'
 
-class Seller extends Component {
+class BuyerOrSeller extends Component {
     render() {
+        const { mode } = this.props
         return (
             <div>
                 <Switch>
                     <Route
-                        path="/seller/property-type"
+                        path={`/${mode}/property-type`}
                         render={props => (
                             <FormContainer {...props}>
-                                <PropertyType />
+                                <PropertyType mode={mode} />
                             </FormContainer>
                         )}
                     />
                     <Route
-                        path="/seller/budget"
+                        path={
+                            mode === 'buyer'
+                                ? `/${mode}/budget`
+                                : `/${mode}/price`
+                        }
                         render={props => (
                             <FormContainer {...props}>
-                                <Budget />
+                                <Money mode={mode} />
                             </FormContainer>
                         )}
                     />
+                    {/* Address is exclusive to seller mode */}
                     <Route
-                        path="/seller/address"
+                        path={`/${mode}/address`}
                         render={props => (
                             <FormContainer {...props}>
                                 <Address />
@@ -39,15 +45,19 @@ class Seller extends Component {
                         )}
                     />
                     <Route
-                        path="/seller/also-selling"
+                        path={
+                            mode === 'buyer'
+                                ? `/${mode}/also-selling`
+                                : `/${mode}/also-buying`
+                        }
                         render={props => (
                             <FormContainer {...props}>
-                                <AlsoSelling />
+                                <AlsoOtherOption mode={mode} />
                             </FormContainer>
                         )}
                     />
                     <Route
-                        path="/seller/contact"
+                        path={`/${mode}/contact`}
                         render={props => (
                             <FormContainer {...props}>
                                 <Contact />
@@ -55,7 +65,7 @@ class Seller extends Component {
                         )}
                     />
                     <Route
-                        path="/seller/complete"
+                        path={`/${mode}/complete`}
                         render={props => (
                             <FormContainer {...props}>
                                 <Complete />
@@ -68,4 +78,4 @@ class Seller extends Component {
     }
 }
 
-export default Seller
+export default BuyerOrSeller

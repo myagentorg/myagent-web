@@ -3,8 +3,7 @@ import React, { Component } from 'react'
 import Nav from './components/Nav'
 import Landing from './scenes/Landing'
 import ChooseBuyOrSell from './scenes/ChooseBuyOrSell'
-import Buyer from './scenes/Buyer'
-import Seller from './scenes/Seller'
+import BuyerOrSeller from './scenes/BuyerOrSeller'
 
 import { Switch, Route } from 'react-router-dom'
 
@@ -19,8 +18,14 @@ class App extends Component {
                         path="/buyer-or-seller"
                         component={ChooseBuyOrSell}
                     />
-                    <Route path="/buyer" component={Buyer} />
-                    <Route path="/seller" component={Seller} />
+                    <Route
+                        path="/buyer"
+                        render={props => <BuyerOrSeller mode="buyer" />}
+                    />
+                    <Route
+                        path="/seller"
+                        render={props => <BuyerOrSeller mode="seller" />}
+                    />
                 </Switch>
             </div>
         )
