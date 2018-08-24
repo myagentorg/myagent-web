@@ -1,32 +1,29 @@
 {
-  "name": "myagent-io",
-  "version": "1.0.0",
-  "main": "index.js",
-  "author": "alex-avila <alex.avilx@icloud.com>",
-  "license": "MIT",
-  "scripts": {
-    "lint": "prettier --write \"**/*.{js,css}\""
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
+    "name": "myagent-io",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "alex-avila <alex.avilx@icloud.com>",
+    "license": "MIT",
+    "scripts": {
+        "lint": "prettier --write \"**/*.{js,css}\""
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{js,json,css,md}": [
+            "prettier --write",
+            "git add"
+        ]
+    },
+    "devDependencies": {
+        "eslint": "^5.4.0",
+        "eslint-config-prettier": "^3.0.1",
+        "eslint-plugin-prettier": "^2.6.2",
+        "husky": "^1.0.0-rc.13",
+        "lint-staged": "^7.2.2",
+        "prettier": "^1.14.2"
     }
-  },
-  "lint-staged": {
-    "*.{js,json,css,md}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "devDependencies": {
-    "eslint": "^5.4.0",
-    "eslint-config-prettier": "^3.0.1",
-    "eslint-plugin-prettier": "^2.6.2",
-    "husky": "^1.0.0-rc.13",
-    "lint-staged": "^7.2.2",
-    "prettier": "^1.14.2",
-    "react-redux": "^5.0.7",
-    "react-router-dom": "^4.3.1",
-    "redux": "^4.0.0"
-  }
 }
