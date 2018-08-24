@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
 
-class BuyerForm extends Component {
+class FormContainer extends Component {
     render() {
         return (
             <div>
-                {/* Content */}
                 <div>{this.props.children}</div>
             </div>
         )
     }
 }
 
-export default BuyerForm
+export default FormContainer

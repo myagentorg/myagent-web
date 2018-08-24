@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-import BuyerForm from './components/BuyerForm'
-import PropertyType from '../../components/PropertyType'
-import Budget from '../../components/Budget'
-import AlsoSelling from '../../components/AlsoSelling'
-import Contact from '../../components/Contact'
-import Complete from '../../components/Complete'
+import FormContainer from '../../components/FormContainer'
+import PropertyType from '../../components/FormOptions/PropertyType'
+import Budget from '../../components/FormOptions/Budget'
+import AlsoSelling from '../../components/FormOptions/AlsoSelling'
+import Contact from '../../components/FormOptions/Contact'
+import Complete from '../../components/FormOptions/Complete'
 
 class Buyer extends Component {
     render() {
@@ -16,41 +16,41 @@ class Buyer extends Component {
                     <Route
                         path="/buyer/property-type"
                         render={props => (
-                            <BuyerForm {...props}>
+                            <FormContainer {...props}>
                                 <PropertyType />
-                            </BuyerForm>
+                            </FormContainer>
                         )}
                     />
                     <Route
                         path="/buyer/budget"
                         render={props => (
-                            <BuyerForm {...props}>
+                            <FormContainer {...props}>
                                 <Budget />
-                            </BuyerForm>
+                            </FormContainer>
                         )}
                     />
                     <Route
                         path="/buyer/also-selling"
                         render={props => (
-                            <BuyerForm {...props}>
+                            <FormContainer {...props}>
                                 <AlsoSelling />
-                            </BuyerForm>
+                            </FormContainer>
                         )}
                     />
                     <Route
                         path="/buyer/contact"
                         render={props => (
-                            <BuyerForm {...props}>
+                            <FormContainer {...props}>
                                 <Contact />
-                            </BuyerForm>
+                            </FormContainer>
                         )}
                     />
                     <Route
                         path="/buyer/complete"
                         render={props => (
-                            <BuyerForm {...props}>
+                            <FormContainer {...props}>
                                 <Complete />
-                            </BuyerForm>
+                            </FormContainer>
                         )}
                     />
                 </Switch>

@@ -4,7 +4,7 @@ import Nav from './components/Nav'
 import Landing from './scenes/Landing'
 import BuyerOrSeller from './scenes/BuyerOrSeller'
 import Buyer from './scenes/Buyer'
-// import Seller from './scenes/Seller'
+import Seller from './scenes/Seller'
 
 import { Switch, Route } from 'react-router-dom'
 
@@ -17,7 +17,7 @@ class App extends Component {
                     <Route exact path="/" component={Landing} />
                     <Route path="/buyer-or-seller" component={BuyerOrSeller} />
                     <Route path="/buyer" component={Buyer} />
-                    {/* <Route path="/seller" component={Seller} /> */}
+                    <Route path="/seller" component={Seller} />
                 </Switch>
             </div>
         )
