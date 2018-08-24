@@ -1,0 +1,21 @@
+.nav {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+    padding: 1em 0;
+}
+
+.nav__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1em;
+}
+
+.nav__logo {
+    height: 20px;
+    width: auto;
+}
+
+.nav__phone {
+    text-decoration: none;
+    color: rgb(182, 182, 182);
+    font-weight: 300;
+}
