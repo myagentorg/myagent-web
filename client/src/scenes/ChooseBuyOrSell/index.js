@@ -16,7 +16,7 @@ class ChooseBuyOrSell extends Component {
                         <Button>Buy</Button>
                     </Link>
                     <Link to="/seller/property-type">
-                        <Button>Seller</Button>
+                        <Button>Sell</Button>
                     </Link>
                 </div>
             </FormContainer>
