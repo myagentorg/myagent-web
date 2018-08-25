@@ -7,10 +7,9 @@ const StyledButton = styled.button`
     color: white;
     font-size: 24px;
     padding: 0.75em 1em;
-    margin-top: 0.75em;
     border-radius: 5px;
     transition: all 0.25s;
-
+    min-width: 150px;
     &:hover,
     &:focus {
         background: royalblue;
