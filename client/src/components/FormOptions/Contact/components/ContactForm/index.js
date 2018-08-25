@@ -29,7 +29,7 @@ class ContactForm extends Component {
                     <label>
                         <span>Phone Number</span>
                         <Input
-                            placeholder="(___) ___-___)"
+                            placeholder="(___) ___-___"
                             required
                             textAlign="left"
                         />
