@@ -8,7 +8,7 @@ const StyledInput = styled.input`
     font-size: inherit;
     padding: 1em 1.618em;
     width: 100%;
-    text-align: center;
+    text-align: ${props => props.textAlign || 'center'};
     border-radius: 5px;
     border: ${props =>
         props.mode === 'red' ? '1px solid red' : '1px solid #aaa'};
@@ -29,7 +29,8 @@ class Input extends Component {
             placeholder,
             handleChange,
             required,
-            mode
+            mode,
+            textAlign
         } = this.props
         return (
             <StyledInput
@@ -37,6 +38,7 @@ class Input extends Component {
                 type="text"
                 name={name}
                 placeholder={placeholder}
+                textAlign={textAlign}
                 value={value}
                 onChange={handleChange}
                 required={required}
