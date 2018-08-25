@@ -6,11 +6,13 @@ import Button from '../../Button'
 class PropertyType extends Component {
     render() {
         const { mode } = this.props
-        const link = mode === 'buyer' ? 'budget' : 'price'
         return (
             <div>
-                <h2>Property Type</h2>
-                <Link to={link}>
+                <h2>
+                    What type of property are you
+                    {mode === 'buyer' ? ' looking for' : ' selling'}?
+                </h2>
+                <Link to={mode === 'buyer' ? 'budget' : 'price'}>
                     <Button>Next</Button>
                 </Link>
             </div>
