@@ -5,12 +5,12 @@ import styled from 'styled-components'
 const StyledButton = styled.button`
     background: dodgerblue;
     color: white;
-    font-size: inherit;
-    padding: 1em;
-    margin-top: 1em;
-    width: 100%;
+    font-size: 24px;
+    padding: 0.75em 1em;
+    margin-top: 0.75em;
     border-radius: 5px;
     transition: all 0.25s;
+
     &:hover,
     &:focus {
         background: royalblue;
