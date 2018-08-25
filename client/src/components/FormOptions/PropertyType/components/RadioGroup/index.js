@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Button from '../../../../Button'
 
+import './index.css'
+
 class RadioGroup extends Component {
     render() {
         const { mode, type, handleChange } = this.props
