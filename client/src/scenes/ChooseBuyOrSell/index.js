@@ -2,15 +2,22 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 import FormContainer from '../../components/FormContainer'
+import Button from '../../components/Button'
+
+import './index.css'
 
 class ChooseBuyOrSell extends Component {
     render() {
         return (
             <FormContainer>
-                <div>Buyer or Seller</div>
-                <div>
-                    <Link to="/buyer/property-type">Buyer</Link>
-                    <Link to="/seller/property-type">Seller</Link>
+                <h2>Are you looking to buy or sell in {`location`}?</h2>
+                <div className="buy-or-sell__buttons">
+                    <Link to="/buyer/property-type">
+                        <Button>Buy</Button>
+                    </Link>
+                    <Link to="/seller/property-type">
+                        <Button>Seller</Button>
+                    </Link>
                 </div>
             </FormContainer>
         )

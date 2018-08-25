@@ -42,7 +42,7 @@ class Landing extends Component {
         } = this
         return (
             <FormContainer>
-                <h3>Find Top Real Estate Agents in Your City</h3>
+                <h2>Find Top Real Estate Agents in Your City</h2>
                 <p>
                     Agent Pronto is a free service that helps you find a
                     top-performing agent you can trust.
@@ -50,23 +50,25 @@ class Landing extends Component {
                 <p>
                     Get started today by entering a city or neighborhood below.
                 </p>
-                <Input
-                    name="location"
-                    placeholder="Enter a city or neighborhood..."
-                    value={location}
-                    handleChange={handleChange}
-                    mode={attemptFailed ? 'red' : null}
-                />
-                {attemptFailed ? (
-                    <Warning>This field is required</Warning>
-                ) : null}
-                <Link
-                    to={validated ? '/buyer-or-seller' : ''}
-                    tabIndex="-1"
-                    onClick={handleClick}
-                >
-                    <Button>Find Your Perfect Agent</Button>
-                </Link>
+                <div className="landing__input-n-form">
+                    <Input
+                        name="location"
+                        placeholder="Enter a city or neighborhood..."
+                        value={location}
+                        handleChange={handleChange}
+                        mode={attemptFailed ? 'red' : null}
+                    />
+                    {attemptFailed ? (
+                        <Warning>This field is required</Warning>
+                    ) : null}
+                    <Link
+                        to={validated ? '/buyer-or-seller' : ''}
+                        tabIndex="-1"
+                        onClick={handleClick}
+                    >
+                        <Button>Find Your Perfect Agent</Button>
+                    </Link>
+                </div>
             </FormContainer>
         )
     }
