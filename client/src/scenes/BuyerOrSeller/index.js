@@ -13,7 +13,7 @@ class BuyerOrSeller extends Component {
     render() {
         const { mode } = this.props
         return (
-            <div>
+            <React.Fragment>
                 <Switch>
                     <Route
                         path={`/${mode}/property-type`}
@@ -73,7 +73,7 @@ class BuyerOrSeller extends Component {
                         )}
                     />
                 </Switch>
-            </div>
+            </React.Fragment>
         )
     }
 }
