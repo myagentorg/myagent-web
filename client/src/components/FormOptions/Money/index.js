@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 
 import { Link } from 'react-router-dom'
 
+import Button from '../../Button'
+
 class Money extends Component {
     constructor(props) {
         super(props)
@@ -25,8 +27,10 @@ class Money extends Component {
         } = this
         return (
             <div>
-                <div>{content[mode].title}</div>
-                <Link to={content[mode].link}>{content[mode].linkText}</Link>
+                <h2>{content[mode].title}</h2>
+                <Link to={content[mode].link}>
+                    <Button>Next</Button>
+                </Link>
             </div>
         )
     }

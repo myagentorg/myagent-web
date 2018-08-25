@@ -2,12 +2,16 @@ import React, { Component } from 'react'
 
 import { Link } from 'react-router-dom'
 
+import Button from '../../Button'
+
 class Contact extends Component {
     render() {
         return (
             <div>
-                <div>Address</div>
-                <Link to="also-buying">Also Buying</Link>
+                <h2>Address</h2>
+                <Link to="also-buying">
+                    <Button>Next</Button>
+                </Link>
             </div>
         )
     }

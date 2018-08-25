@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 
 import { Link } from 'react-router-dom'
 
+import Button from '../../Button'
+
+import './index.css'
+
 class AlsoOtherOption extends Component {
     constructor(props) {
         super(props)
@@ -17,8 +21,15 @@ class AlsoOtherOption extends Component {
         } = this
         return (
             <div>
-                <div>{content[mode].title}</div>
-                <Link to="contact">Contact</Link>
+                <h2>{content[mode].title}</h2>
+                <div className="also-other-option__buttons">
+                    <Link to="contact">
+                        <Button>Yes</Button>
+                    </Link>
+                    <Link to="contact">
+                        <Button>No</Button>
+                    </Link>
+                </div>
             </div>
         )
     }
