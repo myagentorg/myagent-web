@@ -10,8 +10,8 @@ class AlsoOtherOption extends Component {
     constructor(props) {
         super(props)
         this.content = {
-            buyer: { title: 'Also Selling' },
-            seller: { title: 'Also Buyings' }
+            buyer: { title: 'Are you also selling a property?' },
+            seller: { title: 'Are you also buying a home?' }
         }
     }
     render() {
