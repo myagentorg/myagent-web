@@ -10,6 +10,7 @@ const StyledButton = styled.button`
     border-radius: 5px;
     transition: all 0.25s;
     min-width: 150px;
+    cursor: pointer;
     &:hover,
     &:focus {
         background: royalblue;
