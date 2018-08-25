@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 
 import RadioGroup from './components/RadioGroup'
+import { Link } from 'react-router-dom'
+import Button from '../../Button'
 
 class PropertyType extends Component {
     constructor(props) {
@@ -30,6 +32,9 @@ class PropertyType extends Component {
                     type={type}
                     handleChange={handleChange}
                 />
+                <Link to={mode === 'buyer' ? 'budget' : 'price'}>
+                    <Button>Next</Button>
+                </Link>
             </div>
         )
     }

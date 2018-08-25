@@ -1,15 +1,12 @@
 import React, { Component } from 'react'
 
-import { Link } from 'react-router-dom'
-import Button from '../../../../Button'
-
 import './index.css'
 
 class RadioGroup extends Component {
     render() {
-        const { mode, type, handleChange } = this.props
+        const { type, handleChange } = this.props
         return (
-            <form>
+            <div className="radio-group">
                 <div className="property-type__radio">
                     <label>
                         <input
@@ -82,10 +79,7 @@ class RadioGroup extends Component {
                         Other
                     </label>
                 </div>
-                <Link to={mode === 'buyer' ? 'budget' : 'price'}>
-                    <Button>Next</Button>
-                </Link>
-            </form>
+            </div>
         )
     }
 }
