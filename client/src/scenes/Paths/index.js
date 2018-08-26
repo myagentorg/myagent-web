@@ -5,7 +5,7 @@ import FormContainer from '../../components/FormContainer'
 import PropertyType from '../../components/FormOptions/PropertyType'
 import Money from '../../components/FormOptions/Money'
 import Address from '../../components/FormOptions/Address'
-import AlsoOtherOption from '../../components/FormOptions/AlsoOtherOption'
+import Loan from '../../components/FormOptions/Loan'
 import Contact from '../../components/FormOptions/Contact'
 import Complete from '../../components/FormOptions/Complete'
 
@@ -52,7 +52,7 @@ class Paths extends Component {
                         }
                         render={props => (
                             <FormContainer {...props}>
-                                <AlsoOtherOption mode={mode} />
+                                <Loan mode={mode} />
                             </FormContainer>
                         )}
                     />
