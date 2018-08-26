@@ -6,7 +6,7 @@ import Button from '../../components/Button'
 
 import './index.css'
 
-class ChooseBuyOrSell extends Component {
+class ChooseMainPath extends Component {
     render() {
         return (
             <FormContainer>
@@ -18,10 +18,13 @@ class ChooseBuyOrSell extends Component {
                     <Link to="/seller/property-type">
                         <Button>Sell</Button>
                     </Link>
+                    <Link to="/buyer-and-seller/buyer/property-type">
+                        <Button>Both</Button>
+                    </Link>
                 </div>
             </FormContainer>
         )
     }
 }
 
-export default ChooseBuyOrSell
+export default ChooseMainPath

@@ -1,5 +1,5 @@
 .buy-or-sell__buttons {
     display: inline-grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 1em;
 }
