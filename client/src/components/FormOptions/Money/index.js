@@ -14,13 +14,11 @@ class Money extends Component {
         }
         this.content = {
             buyer: {
-                link: 'also-selling',
-                linkText: 'Also Selling',
+                link: 'loan',
                 title: 'What’s your approximate budget?'
             },
             seller: {
                 link: 'address',
-                linkText: 'Address',
                 title: 'Roughly how much is your property worth?'
             }
         }
@@ -33,7 +31,7 @@ class Money extends Component {
 
     render() {
         const {
-            props: { mode },
+            props: { mode, link },
             state: { moneyRange },
             content,
             handleChange
@@ -58,7 +56,7 @@ class Money extends Component {
                     value={moneyRange}
                     onChange={handleChange}
                 />
-                <Link to={content[mode].link}>
+                <Link to={link || content[mode].link}>
                     <Button>Next</Button>
                 </Link>
             </div>

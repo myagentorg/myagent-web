@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 
+import { Switch, Route } from 'react-router-dom'
+
 import Nav from './components/Nav'
 import Landing from './scenes/Landing'
 import ChooseMainPath from './scenes/ChooseMainPath'
 import Paths from './scenes/Paths'
-
-import { Switch, Route } from 'react-router-dom'
+import BothPaths from './scenes/BothPaths'
 
 import './App.css'
 
@@ -27,7 +28,7 @@ class App extends Component {
                     />
                     <Route
                         path="/buyer-and-seller"
-                        render={props => <Paths mode="buyer-and-seller" />}
+                        render={props => <BothPaths />}
                     />
                 </Switch>
             </div>

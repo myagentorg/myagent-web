@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+
 import { Switch, Route } from 'react-router-dom'
 
 import FormContainer from '../../components/FormContainer'
@@ -17,8 +18,8 @@ class Paths extends Component {
                 <Route
                     path={`/${mode}/property-type`}
                     render={props => (
-                        <FormContainer {...props}>
-                            <PropertyType mode={mode} />
+                        <FormContainer>
+                            <PropertyType mode={mode} {...props} />
                         </FormContainer>
                     )}
                 />
@@ -27,45 +28,40 @@ class Paths extends Component {
                         mode === 'buyer' ? `/${mode}/budget` : `/${mode}/price`
                     }
                     render={props => (
-                        <FormContainer {...props}>
-                            <Money mode={mode} />
+                        <FormContainer>
+                            <Money mode={mode} {...props} />
                         </FormContainer>
                     )}
                 />
-                {/* Address is exclusive to seller mode */}
                 <Route
                     path={`/${mode}/address`}
                     render={props => (
-                        <FormContainer {...props}>
-                            <Address />
+                        <FormContainer>
+                            <Address {...props} />
                         </FormContainer>
                     )}
                 />
                 <Route
-                    path={
-                        mode === 'buyer'
-                            ? `/${mode}/also-selling`
-                            : `/${mode}/also-buying`
-                    }
+                    path={`/${mode}/loan`}
                     render={props => (
-                        <FormContainer {...props}>
-                            <Loan mode={mode} />
+                        <FormContainer>
+                            <Loan {...props} />
                         </FormContainer>
                     )}
                 />
                 <Route
                     path={`/${mode}/contact`}
                     render={props => (
-                        <FormContainer {...props}>
-                            <Contact />
+                        <FormContainer>
+                            <Contact {...props} />
                         </FormContainer>
                     )}
                 />
                 <Route
                     path={`/${mode}/complete`}
                     render={props => (
-                        <FormContainer {...props}>
-                            <Complete />
+                        <FormContainer>
+                            <Complete {...props} />
                         </FormContainer>
                     )}
                 />
