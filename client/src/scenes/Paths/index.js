@@ -9,7 +9,7 @@ import AlsoOtherOption from '../../components/FormOptions/AlsoOtherOption'
 import Contact from '../../components/FormOptions/Contact'
 import Complete from '../../components/FormOptions/Complete'
 
-class BuyerOrSeller extends Component {
+class Paths extends Component {
     render() {
         const { mode } = this.props
         return (
@@ -78,4 +78,4 @@ class BuyerOrSeller extends Component {
     }
 }
 
-export default BuyerOrSeller
+export default Paths
