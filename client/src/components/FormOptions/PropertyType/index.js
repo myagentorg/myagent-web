@@ -17,7 +17,7 @@ class PropertyType extends Component {
 
     render() {
         const {
-            props: { mode },
+            props: { mode, link },
             state: { type },
             handleChange
         } = this
@@ -32,7 +32,7 @@ class PropertyType extends Component {
                     type={type}
                     handleChange={handleChange}
                 />
-                <Link to={mode === 'buyer' ? 'budget' : 'price'}>
+                <Link to={link || (mode === 'buyer' ? 'budget' : 'price')}>
                     <Button>Next</Button>
                 </Link>
             </div>

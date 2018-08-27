@@ -5,7 +5,6 @@ import './index.css'
 class RadioGroup extends Component {
     render() {
         const { type, handleChange } = this.props
-        console.log(type)
         return (
             <div className="radio-group">
                 <div className="property-type__radio">

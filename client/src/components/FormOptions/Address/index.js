@@ -9,12 +9,13 @@ import './index.css'
 
 class Contact extends Component {
     render() {
+        const { link } = this.props
         return (
             <div>
                 <h2>What is the address of the property you’re selling?</h2>
                 <div className="address__input-n-button">
                     <Input placeholder="Search for your address..." required />
-                    <Link to="also-buying">
+                    <Link to={link || 'loan'}>
                         <Button>Next</Button>
                     </Link>
                 </div>
