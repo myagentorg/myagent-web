@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 
 import { Link } from 'react-router-dom'
 
+import { connect } from 'react-redux'
+import { addNewField } from '../../redux/reducers/formReducer'
+
 import FormContainer from '../../components/FormContainer'
 import Button from '../../components/Button'
 import Warning from '../../components/Warning'
@@ -33,6 +36,8 @@ class Landing extends Component {
             this.setState({
                 attemptFailed: true
             })
+        } else {
+            this.props.addNewField('location', this.state.location)
         }
     }
 
@@ -76,4 +81,7 @@ class Landing extends Component {
     }
 }
 
-export default Landing
+export default connect(
+    null,
+    { addNewField }
+)(Landing)

@@ -10,7 +10,7 @@ class Money extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            moneyRange: 250000
+            moneyNum: 250000
         }
         this.content = {
             buyer: {
@@ -31,16 +31,16 @@ class Money extends Component {
 
     render() {
         const {
-            props: { mode, link },
-            state: { moneyRange },
+            props: { mode, link, handleAddNewField, field },
+            state: { moneyNum },
             content,
             handleChange
         } = this
         const moneyDisplay =
-            moneyRange <= 0
+            moneyNum <= 0
                 ? `I'm not sure...`
-                : moneyRange < 1000000
-                    ? moneyRange
+                : moneyNum < 1000000
+                    ? moneyNum
                     : '1000000+'
         return (
             <div>
@@ -48,15 +48,18 @@ class Money extends Component {
                 <h3 style={{ fontSize: '2em' }}>{moneyDisplay}</h3>
                 <input
                     className="money__slider"
-                    name="moneyRange"
+                    name="moneyNum"
                     type="range"
                     min="0"
                     max="1000000"
                     step="10000"
-                    value={moneyRange}
+                    value={moneyNum}
                     onChange={handleChange}
                 />
-                <Link to={link || content[mode].link}>
+                <Link
+                    to={link || content[mode].link}
+                    onClick={() => handleAddNewField(field, moneyNum)}
+                >
                     <Button>Next</Button>
                 </Link>
             </div>
