@@ -3,9 +3,10 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 import FormContainer from '../../components/FormContainer'
-import Input from '../../components/Input'
 import Button from '../../components/Button'
 import Warning from '../../components/Warning'
+
+import MySearchBox from '../../components/SearchBox'
 
 import './index.css'
 
@@ -19,8 +20,9 @@ class Landing extends Component {
         }
     }
 
-    handleChange = e => {
-        const { name, value } = e.target
+    handleChange = (e, value = e.target.value) => {
+        value = value === null ? e.target.value : value
+        const { name } = e.target
         this.setState({ [name]: value }, () => {
             this.setState({ validated: this.state.location.length > 0 })
         })
@@ -51,7 +53,7 @@ class Landing extends Component {
                     Get started today by entering a city or neighborhood below.
                 </p>
                 <div className="landing__input-n-form">
-                    <Input
+                    <MySearchBox
                         name="location"
                         placeholder="Enter a city or neighborhood..."
                         value={location}
