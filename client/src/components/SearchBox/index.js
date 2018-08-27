@@ -55,30 +55,8 @@ const MySearchBox = compose(
                     mode={mode}
                 />
             </StandaloneSearchBox>
-            {/* <ol>
-                {props.places.map(
-                    ({
-                        place_id,
-                        formatted_address,
-                        geometry: { location }
-                    }) => (
-                        <li key={place_id}>
-                            {formatted_address}
-                            {' at '}({location.lat()}, {location.lng()})
-                        </li>
-                    )
-                )}
-            </ol> */}
         </div>
     )
 })
 
 export default MySearchBox
-
-// class SearchBox extends Component {
-//     render() {
-//         return <div />
-//     }
-// }
-
-// export default SearchBox
