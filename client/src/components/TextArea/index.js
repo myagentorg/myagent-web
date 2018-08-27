@@ -19,8 +19,8 @@ const StyledTextArea = styled.textarea`
     }
 `
 
-const TextArea = () => {
-    return <StyledTextArea />
+const TextArea = ({ handleChange, name }) => {
+    return <StyledTextArea name={name} onChange={handleChange} />
 }
 
 export default TextArea

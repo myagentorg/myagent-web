@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 
 import { Switch, Route } from 'react-router-dom'
 
+import { withRouter } from 'react-router-dom'
+
+import { connect } from 'react-redux'
+import { addNewField } from '../../redux/reducers/formReducer'
+
 import FormContainer from '../../components/FormContainer'
 import PropertyType from '../../components/FormOptions/PropertyType'
 import Money from '../../components/FormOptions/Money'
@@ -11,15 +16,27 @@ import Contact from '../../components/FormOptions/Contact'
 import Complete from '../../components/FormOptions/Complete'
 
 class Paths extends Component {
+    handleAddNewField = (field, value) => {
+        this.props.addNewField(field, value)
+    }
+
     render() {
-        const { mode } = this.props
+        const {
+            props: { mode },
+            handleAddNewField
+        } = this
         return (
             <Switch>
                 <Route
                     path={`/${mode}/property-type`}
                     render={props => (
                         <FormContainer>
-                            <PropertyType mode={mode} {...props} />
+                            <PropertyType
+                                mode={mode}
+                                {...props}
+                                handleAddNewField={handleAddNewField}
+                                field="propertyType"
+                            />
                         </FormContainer>
                     )}
                 />
@@ -29,7 +46,12 @@ class Paths extends Component {
                     }
                     render={props => (
                         <FormContainer>
-                            <Money mode={mode} {...props} />
+                            <Money
+                                mode={mode}
+                                {...props}
+                                handleAddNewField={handleAddNewField}
+                                field={mode === 'buyer' ? `budget` : `price`}
+                            />
                         </FormContainer>
                     )}
                 />
@@ -37,7 +59,11 @@ class Paths extends Component {
                     path={`/${mode}/address`}
                     render={props => (
                         <FormContainer>
-                            <Address {...props} />
+                            <Address
+                                {...props}
+                                handleAddNewField={handleAddNewField}
+                                field="address"
+                            />
                         </FormContainer>
                     )}
                 />
@@ -45,7 +71,11 @@ class Paths extends Component {
                     path={`/${mode}/loan`}
                     render={props => (
                         <FormContainer>
-                            <Loan {...props} />
+                            <Loan
+                                {...props}
+                                handleAddNewField={handleAddNewField}
+                                field="loan"
+                            />
                         </FormContainer>
                     )}
                 />
@@ -53,7 +83,11 @@ class Paths extends Component {
                     path={`/${mode}/contact`}
                     render={props => (
                         <FormContainer>
-                            <Contact {...props} />
+                            <Contact
+                                {...props}
+                                handleAddNewField={handleAddNewField}
+                                field="contact"
+                            />
                         </FormContainer>
                     )}
                 />
@@ -70,4 +104,9 @@ class Paths extends Component {
     }
 }
 
-export default Paths
+export default withRouter(
+    connect(
+        null,
+        { addNewField }
+    )(Paths)
+)

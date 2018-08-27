@@ -17,7 +17,7 @@ class PropertyType extends Component {
 
     render() {
         const {
-            props: { mode, link },
+            props: { mode, link, handleAddNewField, field },
             state: { type },
             handleChange
         } = this
@@ -32,7 +32,10 @@ class PropertyType extends Component {
                     type={type}
                     handleChange={handleChange}
                 />
-                <Link to={link || (mode === 'buyer' ? 'budget' : 'price')}>
+                <Link
+                    to={link || (mode === 'buyer' ? 'budget' : 'price')}
+                    onClick={() => handleAddNewField(field, type)}
+                >
                     <Button>Next</Button>
                 </Link>
             </div>
