@@ -18,7 +18,6 @@ class Contact extends Component {
 
     handleChange = e => {
         const { name, value } = e.target
-        console.log(name)
         this.setState(prevState => ({ ...prevState, [name]: value }))
     }
 
