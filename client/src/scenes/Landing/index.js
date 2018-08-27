@@ -6,7 +6,7 @@ import FormContainer from '../../components/FormContainer'
 import Button from '../../components/Button'
 import Warning from '../../components/Warning'
 
-import MySearchBox from '../../components/SearchBox'
+import SearchBox from '../../components/SearchBox'
 
 import './index.css'
 
@@ -20,12 +20,12 @@ class Landing extends Component {
         }
     }
 
-    handleChange = (e, value = e.target.value) => {
-        value = value === null ? e.target.value : value
-        const { name } = e.target
-        this.setState({ [name]: value }, () => {
-            this.setState({ validated: this.state.location.length > 0 })
-        })
+    handleChange = location => {
+        this.setState({ location, validated: false })
+    }
+
+    validateSelection = location => {
+        this.setState({ location, validated: true })
     }
 
     handleClick = () => {
@@ -40,7 +40,8 @@ class Landing extends Component {
         const {
             state: { location, validated, attemptFailed },
             handleChange,
-            handleClick
+            handleClick,
+            validateSelection
         } = this
         return (
             <FormContainer>
@@ -53,12 +54,11 @@ class Landing extends Component {
                     Get started today by entering a city or neighborhood below.
                 </p>
                 <div className="landing__input-n-form">
-                    <MySearchBox
-                        name="location"
+                    <SearchBox
                         placeholder="Enter a city or neighborhood..."
                         value={location}
                         handleChange={handleChange}
-                        mode={attemptFailed ? 'red' : null}
+                        validateSelection={validateSelection}
                     />
                     {attemptFailed ? (
                         <Warning>This field is required</Warning>

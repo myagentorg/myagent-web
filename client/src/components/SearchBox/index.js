@@ -1,62 +1,72 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-import Input from '../Input'
+import PlacesAutocomplete from 'react-places-autocomplete'
 
-import { compose, withProps, lifecycle } from 'recompose'
-import { withScriptjs } from 'react-google-maps'
-import StandaloneSearchBox from 'react-google-maps/lib/components/places/StandaloneSearchBox'
+import styled from 'styled-components'
 
-const MySearchBox = compose(
-    withProps({
-        googleMapURL:
-            'https://maps.googleapis.com/maps/api/js?key=AIzaSyDVRbJJDt-Ard7WL5oJGimjVLhOKHcYrWU&v=3.exp&libraries=places',
-        loadingElement: <div style={{ height: `100%` }} />,
-        containerElement: <div style={{ height: '400px' }} />
-    }),
-    lifecycle({
-        componentWillMount() {
-            const refs = {}
+import './index.css'
 
-            this.setState({
-                places: [],
-                onSearchBoxMounted: ref => {
-                    refs.searchBox = ref
-                },
-                onPlacesChanged: () => {
-                    const places = refs.searchBox.getPlaces()
-
-                    this.setState({
-                        places
-                    })
-                }
-            })
-        }
-    }),
-    withScriptjs
-)(props => {
-    const { name, placeholder, handleChange, mode } = props
-    let { value } = props
-    if (props.places[0]) {
-        value = props.places[0].formatted_address
-        props.places[0].formatted_address = undefined
+const StyledInput = styled.input`
+    display: block;
+    margin: auto;
+    font-size: inherit;
+    padding: 1em 1.618em;
+    width: 100%;
+    text-align: ${props => props.textAlign || 'center'};
+    border-radius: 5px;
+    border: ${props =>
+        props.mode === 'red' ? '1px solid red' : '1px solid #aaa'};
+    outline: none;
+    transition: all 0.25s;
+    &:focus {
+        box-shadow: 0 0 5px
+                ${props => (props.mode === 'red' ? 'red' : 'dodgerblue')},
+            0 2px 3px rgba(0, 0, 0, 0.1);
     }
-    return (
-        <div data-standalone-searchbox="">
-            <StandaloneSearchBox
-                ref={props.onSearchBoxMounted}
-                bounds={props.bounds}
-                onPlacesChanged={props.onPlacesChanged}
-            >
-                <Input
-                    name={name}
-                    placeholder={placeholder}
-                    value={value}
-                    handleChange={handleChange}
-                    mode={mode}
-                />
-            </StandaloneSearchBox>
-        </div>
-    )
-})
+`
 
-export default MySearchBox
+class SearchBox extends Component {
+    render() {
+        return (
+            <PlacesAutocomplete
+                value={this.props.value}
+                onChange={this.props.handleChange}
+                onSelect={this.props.validateSelection}
+            >
+                {({
+                    getInputProps,
+                    suggestions,
+                    getSuggestionItemProps,
+                    loading
+                }) => (
+                    <div style={{ position: 'relative' }}>
+                        <StyledInput
+                            {...getInputProps({
+                                placeholder: this.props.placeholder
+                            })}
+                        />
+                        <div className="autocomplete-dropdown-container">
+                            {loading && <div>Loading...</div>}
+                            {suggestions.map(suggestion => {
+                                const className = suggestion.active
+                                    ? 'suggestion-item suggestion-item--active'
+                                    : 'suggestion-item'
+                                return (
+                                    <div
+                                        {...getSuggestionItemProps(suggestion, {
+                                            className
+                                        })}
+                                    >
+                                        <span>{suggestion.description}</span>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </div>
+                )}
+            </PlacesAutocomplete>
+        )
+    }
+}
+
+export default SearchBox
