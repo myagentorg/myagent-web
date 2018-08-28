@@ -34,7 +34,7 @@ class SearchBox extends Component {
             .then(results => getLatLng(results[0]))
             .then(latLng => {
                 cb(address, latLng)
-                console.log('Success', latLng)
+                // console.log('Success', latLng)
             })
             .catch(error => console.error('Error', error))
     }
