@@ -24,19 +24,21 @@ class ChooseMainPath extends Component {
                 <div className="buy-or-sell__buttons">
                     <Link
                         to="/buyer/property-type"
-                        onClick={() => addNewField('path', 'buyer')}
+                        onClick={() => addNewField('clientType', 'buyer')}
                     >
                         <Button>Buy</Button>
                     </Link>
                     <Link
                         to="/seller/property-type"
-                        onClick={() => addNewField('path', 'seller')}
+                        onClick={() => addNewField('clientType', 'seller')}
                     >
                         <Button>Sell</Button>
                     </Link>
                     <Link
                         to="/buyer-and-seller/buyer/property-type"
-                        onClick={() => addNewField('path', 'buyer-and-seller')}
+                        onClick={() =>
+                            addNewField('clientType', 'buyer-and-seller')
+                        }
                     >
                         <Button>Both</Button>
                     </Link>
