@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const initialState = {}
 
-const formReducdr = (state = initialState, action) => {
+const formReducder = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_NEW_FIELD':
             return {
@@ -33,4 +33,4 @@ export const postToDatabase = body => {
     }
 }
 
-export default formReducdr
+export default formReducder
