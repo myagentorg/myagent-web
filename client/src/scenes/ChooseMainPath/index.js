@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { addNewField } from '../../redux/reducers/formReducer'
 
+import Map from '../../components/Map'
 import FormContainer from '../../components/FormContainer'
 import Button from '../../components/Button'
 
@@ -11,7 +12,12 @@ import './index.css'
 
 class ChooseMainPath extends Component {
     render() {
-        const { addNewField } = this.props
+        const {
+            addNewField,
+            form: { location }
+        } = this.props
+        let lat, lng
+        if (location) ({ lat, lng } = location)
         return (
             <FormContainer>
                 <h2>Are you looking to buy or sell in {`location`}?</h2>
@@ -35,12 +41,29 @@ class ChooseMainPath extends Component {
                         <Button>Both</Button>
                     </Link>
                 </div>
+                <Map
+                    lat={lat}
+                    lng={lng}
+                    containerElement={
+                        <div
+                            style={{
+                                height: `200px`,
+                                marginTop: '1em',
+                                borderRadius: '5px',
+                                boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)'
+                            }}
+                        />
+                    }
+                    mapElement={
+                        <div style={{ height: `100%`, borderRadius: '5px' }} />
+                    }
+                />
             </FormContainer>
         )
     }
 }
 
 export default connect(
-    null,
+    state => ({ form: state.form }),
     { addNewField }
 )(ChooseMainPath)

@@ -18,6 +18,7 @@ class Landing extends Component {
         super()
         this.state = {
             location: '',
+            latLng: {},
             validated: false,
             attemptFailed: false
         }
@@ -27,8 +28,8 @@ class Landing extends Component {
         this.setState({ location, validated: false })
     }
 
-    validateSelection = location => {
-        this.setState({ location, validated: true })
+    handleSelection = (location, latLng) => {
+        this.setState({ location, validated: true, latLng })
     }
 
     handleClick = () => {
@@ -37,7 +38,7 @@ class Landing extends Component {
                 attemptFailed: true
             })
         } else {
-            this.props.addNewField('location', this.state.location)
+            this.props.addNewField('location', this.state.latLng)
         }
     }
 
@@ -46,7 +47,7 @@ class Landing extends Component {
             state: { location, validated, attemptFailed },
             handleChange,
             handleClick,
-            validateSelection
+            handleSelection
         } = this
         return (
             <FormContainer>
@@ -63,7 +64,7 @@ class Landing extends Component {
                         placeholder="Enter a city or neighborhood..."
                         value={location}
                         handleChange={handleChange}
-                        validateSelection={validateSelection}
+                        handleSelection={handleSelection}
                     />
                     {attemptFailed ? (
                         <Warning>This field is required</Warning>
