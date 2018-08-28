@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 
-import PlacesAutocomplete from 'react-places-autocomplete'
+import PlacesAutocomplete, {
+    getLatLng,
+    geocodeByAddress
+} from 'react-places-autocomplete'
 
 import styled from 'styled-components'
 
@@ -26,12 +29,25 @@ const StyledInput = styled.input`
 `
 
 class SearchBox extends Component {
+    innerSelectionFn = (address, cb) => {
+        geocodeByAddress(address)
+            .then(results => getLatLng(results[0]))
+            .then(latLng => {
+                cb(address, latLng)
+                console.log('Success', latLng)
+            })
+            .catch(error => console.error('Error', error))
+    }
+
     render() {
+        const { value, handleChange, handleSelection } = this.props
         return (
             <PlacesAutocomplete
-                value={this.props.value}
-                onChange={this.props.handleChange}
-                onSelect={this.props.validateSelection}
+                value={value}
+                onChange={handleChange}
+                onSelect={address => {
+                    this.innerSelectionFn(address, handleSelection)
+                }}
             >
                 {({
                     getInputProps,
