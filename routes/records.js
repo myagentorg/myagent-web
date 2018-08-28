@@ -1,6 +1,6 @@
 const express = require('express')
 const recordsRouter = express.Router()
-const Record = require('../models/records')
+const Record = require('../models/record')
 
 const handleRequest = (res, err, data, isPost = false) => {
     if (err) return res.status(500).send(err)

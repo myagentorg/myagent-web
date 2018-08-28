@@ -2,13 +2,16 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
-const morgan = required('morgan')
+const morgan = require('morgan')
 const port = 8000
 
 app.use(bodyParser.json())
 app.use(morgan('dev'))
 
-mongoose.connect('mongodb://localhost/myagent_io')
+mongoose.connect(
+    'mongodb://localhost/myagent_io',
+    { useNewUrlParser: true }
+)
 
 const db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error'))
