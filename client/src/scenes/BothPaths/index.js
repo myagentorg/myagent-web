@@ -32,7 +32,7 @@ class BothPaths extends Component {
                                 mode="buyer"
                                 link="/buyer-and-seller/seller/property-type"
                                 handleAddNewField={handleAddNewField}
-                                field="propertyTypeBuyer"
+                                field="propertyTypeBuying"
                             />
                         </FormContainer>
                     )}
@@ -46,7 +46,7 @@ class BothPaths extends Component {
                                 mode="seller"
                                 link="/buyer-and-seller/buyer/budget"
                                 handleAddNewField={handleAddNewField}
-                                field="propertyTypeSeller"
+                                field="propertyTypeSelling"
                             />
                         </FormContainer>
                     )}
@@ -87,7 +87,7 @@ class BothPaths extends Component {
                                 {...props}
                                 link="/buyer-and-seller/loan"
                                 handleAddNewField={handleAddNewField}
-                                field="address"
+                                field="sellingAddress"
                             />
                         </FormContainer>
                     )}
