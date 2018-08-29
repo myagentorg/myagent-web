@@ -14,13 +14,20 @@ class ChooseMainPath extends Component {
     render() {
         const {
             addNewField,
-            form: { location }
+            form: { clientaddress, clientlatitude: lat, clientlongitude: lng }
         } = this.props
-        let lat, lng
-        if (location) ({ lat, lng } = location)
+        console.log(this.props)
         return (
             <FormContainer>
-                <h2>Are you looking to buy or sell in {`location`}?</h2>
+                <h2>
+                    Are you looking to buy or sell in
+                    {` ${
+                        clientaddress
+                            ? clientaddress.split(',')[0]
+                            : 'your city'
+                    }`}
+                    ?
+                </h2>
                 <div className="buy-or-sell__buttons">
                     <Link
                         to="/buyer/property-type"
