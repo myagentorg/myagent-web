@@ -108,7 +108,7 @@ class BothPaths extends Component {
                 <Route
                     path="/buyer-and-seller/contact"
                     render={props => (
-                        <FormContainer>
+                        <FormContainer slim>
                             <Contact
                                 {...props}
                                 link="/buyer-and-seller/complete"
