@@ -26,7 +26,7 @@ class Money extends Component {
 
     handleChange = e => {
         const { name, value } = e.target
-        this.setState({ [name]: value })
+        this.setState({ [name]: parseInt(value, 10) })
     }
 
     render() {
