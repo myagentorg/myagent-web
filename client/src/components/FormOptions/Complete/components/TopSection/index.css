@@ -1,9 +1,18 @@
 .top-section {
     background: white;
     padding-bottom: 1em;
+    min-height: 100%;
 }
 
 .top-section__logo {
     padding-top: 1em;
     padding-bottom: 1.618em;
+}
+
+@media (min-width: 850px) {
+    .top-section {
+        background: white;
+        padding-bottom: 0;
+        min-height: 100%;
+    }
 }

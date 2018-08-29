@@ -1,13 +1,17 @@
-.complete,
-.complete__wrapper {
+.complete {
     background: dodgerblue;
+    min-height: 100%;
+}
+
+.complete__wrapper {
     /* background: rgb(235, 51, 35); */
-    padding-bottom: 1em;
+    /* padding-bottom: 1em; */
 }
 
 @media (min-width: 850px) {
     .complete__wrapper {
         display: grid;
+        min-height: 100vh;
         grid-template-columns: 7fr 5fr;
         gap: 1em;
     }
