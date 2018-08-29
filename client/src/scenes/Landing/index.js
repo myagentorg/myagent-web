@@ -17,19 +17,19 @@ class Landing extends Component {
     constructor() {
         super()
         this.state = {
-            location: '',
+            address: '',
             latLng: {},
             validated: false,
             attemptFailed: false
         }
     }
 
-    handleChange = location => {
-        this.setState({ location, validated: false })
+    handleChange = address => {
+        this.setState({ address, validated: false })
     }
 
-    handleSelection = (location, latLng) => {
-        this.setState({ location, validated: true, latLng })
+    handleSelection = (address, latLng) => {
+        this.setState({ address, validated: true, latLng })
     }
 
     handleClick = () => {
@@ -38,13 +38,16 @@ class Landing extends Component {
                 attemptFailed: true
             })
         } else {
-            this.props.addNewField('location', this.state.latLng)
+            this.props.addNewField('clientLocation', {
+                address: this.state.address,
+                latLng: this.state.latLng
+            })
         }
     }
 
     render() {
         const {
-            state: { location, validated, attemptFailed },
+            state: { address, validated, attemptFailed },
             handleChange,
             handleClick,
             handleSelection
@@ -62,7 +65,7 @@ class Landing extends Component {
                 <div className="landing__input-n-form">
                     <SearchBox
                         placeholder="Enter a city or neighborhood..."
-                        value={location}
+                        value={address}
                         handleChange={handleChange}
                         handleSelection={handleSelection}
                     />
