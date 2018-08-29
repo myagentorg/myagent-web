@@ -21,7 +21,9 @@ class Loan extends Component {
                     </Link>
                     <Link
                         to="contact"
-                        onClick={() => handleAddNewField(field, 'need lender')}
+                        onClick={() =>
+                            handleAddNewField(field, 'need a lender')
+                        }
                     >
                         <Button>I need a lender</Button>
                     </Link>
