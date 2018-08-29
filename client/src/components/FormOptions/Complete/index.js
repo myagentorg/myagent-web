@@ -9,12 +9,24 @@ import { postToDatabase } from '../../../redux/reducers/formReducer'
 import './index.css'
 
 class Complete extends Component {
+    constructor(props) {
+        super(props)
+        this.state = { form: {} }
+        this.initialState = this.state
+    }
+
     componentDidMount() {
-        this.props.postToDatabase(this.props.form)
+        this.setState({ form: this.props.form }, () =>
+            this.props.postToDatabase(this.props.form)
+        )
+    }
+
+    componentWillUnmount() {
+        this.setState(this.initialState)
     }
 
     render() {
-        const { form } = this.props
+        const { form } = this.state
         let fullname
         if (form) ({ fullname } = form)
         return (

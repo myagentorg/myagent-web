@@ -24,10 +24,6 @@ class DataSection extends Component {
             {
                 title: 'Target Budget',
                 value: form.budget || 800000
-            },
-            {
-                title: 'Target Price',
-                value: form.price || 1000000
             }
         ]
         const mappedData = data.map((item, i) => (
