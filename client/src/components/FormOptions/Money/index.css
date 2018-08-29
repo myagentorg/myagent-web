@@ -1,5 +1,38 @@
+.money__slider--container {
+    width: 100%;
+}
+
 .money__slider {
+    appearance: none;
     display: block;
+    background: #d3d3d3;
+    border-radius: 100px;
+    height: 15px;
+    outline: none;
+    opacity: 0.7;
     margin: 0 auto 1.618em;
     width: 100%;
+    transition: opacity 0.2s;
+}
+
+.money__slider:hover {
+    opacity: 1;
+}
+
+.money__slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: dodgerblue;
+    cursor: pointer;
+}
+
+.money__slider::-moz-range-thumb {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: dodgerblue;
+    cursor: pointer;
 }

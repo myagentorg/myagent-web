@@ -46,16 +46,18 @@ class Money extends Component {
             <div>
                 <h2>{content[mode].title}</h2>
                 <h3 style={{ fontSize: '2em' }}>{moneyDisplay}</h3>
-                <input
-                    className="money__slider"
-                    name="moneyNum"
-                    type="range"
-                    min="0"
-                    max="1000000"
-                    step="10000"
-                    value={moneyNum}
-                    onChange={handleChange}
-                />
+                <div className="money__slider--container">
+                    <input
+                        className="money__slider"
+                        name="moneyNum"
+                        type="range"
+                        min="0"
+                        max="1000000"
+                        step="10000"
+                        value={moneyNum}
+                        onChange={handleChange}
+                    />
+                </div>
                 <Link
                     to={link || content[mode].link}
                     onClick={() => handleAddNewField(field, moneyNum)}
