@@ -6,7 +6,7 @@
     "license": "MIT",
     "scripts": {
         "start": "node server.js",
-        "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
+        "heroku-postbuild": "cd client && yarn install && yarn run build",
         "lint": "prettier --write \"**/*.{js,css}\""
     },
     "husky": {
@@ -36,6 +36,7 @@
         "morgan": "^1.9.0"
     },
     "engines": {
-        "node": "8.11.1"
+        "node": "8.11.1",
+        "yarn": "1.7.0"
     }
 }
