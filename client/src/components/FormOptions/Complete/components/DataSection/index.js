@@ -23,11 +23,11 @@ class DataSection extends Component {
             },
             {
                 title: 'Target Budget',
-                value: form.propertytype || 800000
+                value: form.budget || 800000
             },
             {
                 title: 'Target Price',
-                value: form.propertytype || 1000000
+                value: form.price || 1000000
             }
         ]
         const mappedData = data.map((item, i) => (
