@@ -12,12 +12,17 @@ class Contact extends Component {
     constructor() {
         super()
         this.state = {
-            address: ''
+            address: '',
+            latLng: {}
         }
     }
 
     handleChange = address => {
         this.setState({ address })
+    }
+
+    handleSelection = (address, latLng) => {
+        this.setState({ address, latLng })
     }
 
     render() {
@@ -30,6 +35,7 @@ class Contact extends Component {
                         placeholder="Search for your address..."
                         value={this.state.address}
                         handleChange={this.handleChange}
+                        handleSelection={this.handleSelection}
                     />
                     <Link
                         to={link || 'loan'}
