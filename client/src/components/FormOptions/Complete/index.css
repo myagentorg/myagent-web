@@ -1,0 +1,14 @@
+.complete,
+.complete__wrapper {
+    height: 100%;
+    /* background: rgb(235, 51, 35); */
+    background: dodgerblue;
+}
+
+@media (min-width: 850px) {
+    .complete__wrapper {
+        display: grid;
+        grid-template-columns: 7fr 5fr;
+        gap: 1em;
+    }
+}

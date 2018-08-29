@@ -1,0 +1,10 @@
+.data-section {
+    color: white;
+    padding-top: 1em;
+}
+
+.data-section__data {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 1fr 1fr;
+}

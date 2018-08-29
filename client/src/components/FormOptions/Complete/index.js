@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
 
+import TopSection from './components/TopSection'
+import DataSection from './components/DataSection'
+
 import { connect } from 'react-redux'
 import { postToDatabase } from '../../../redux/reducers/formReducer'
+
+import './index.css'
 
 class Complete extends Component {
     componentDidMount() {
@@ -9,9 +14,15 @@ class Complete extends Component {
     }
 
     render() {
+        const { form } = this.props
+        let fullname
+        if (form) ({ fullname } = form)
         return (
-            <div>
-                <h2>Complete</h2>
+            <div className="complete">
+                <div className="complete__wrapper">
+                    <TopSection fullname={fullname} />
+                    <DataSection form={form} />
+                </div>
             </div>
         )
     }
