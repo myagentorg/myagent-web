@@ -1,5 +1,20 @@
 .buy-or-sell__buttons {
-    display: inline-grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.choose-path__button {
+    width: 100%;
+}
+
+.choose-path__link:not(:last-child) {
+    margin-bottom: 1em;
+}
+
+@media (min-width: 600px) {
+    .buy-or-sell__buttons {
+        display: inline-grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1em;
+    }
 }

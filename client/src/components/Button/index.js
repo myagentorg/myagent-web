@@ -22,7 +22,11 @@ const StyledButton = styled.button`
 
 class Button extends Component {
     render() {
-        return <StyledButton>{this.props.children}</StyledButton>
+        return (
+            <StyledButton className={this.props.className}>
+                {this.props.children}
+            </StyledButton>
+        )
     }
 }
 
