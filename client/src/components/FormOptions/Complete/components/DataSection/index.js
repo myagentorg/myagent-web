@@ -23,10 +23,47 @@ class DataSection extends Component {
             },
             {
                 title: 'Target Budget',
-                value: form.budget || 800000
+                value: form.bidget || 250000
+            },
+            {
+                title: 'Target Price',
+                value: form.price || 250000
+            },
+            {
+                title: 'Buying Property Type',
+                value: form.propertytypebuying || 'Condominium'
+            },
+            {
+                title: 'Selling Property Type',
+                value: form.propertytypeselling || 'Condominium'
+            },
+            {
+                title: 'Address',
+                value:
+                    form.sellingaddress || form.clientaddress || 'Honolulu, Hi'
+            },
+            {
+                title: 'Loan',
+                value: form.loan || 250000
             }
         ]
-        const mappedData = data.map((item, i) => (
+        const filteredData = data.filter(item => {
+            if (form.clienttype === 'seller') {
+                return (
+                    item.title !== 'Buying Property Type' &&
+                    item.title !== 'Selling Property Type' &&
+                    item.title !== 'Target Budget'
+                )
+            } else if (form.clienttype === 'buyer-and-seller') {
+                return item.title !== 'Property Type'
+            }
+            return (
+                item.title !== 'Buying Property Type' &&
+                item.title !== 'Selling Property Type' &&
+                item.title !== 'Target Price'
+            )
+        })
+        const mappedData = filteredData.map((item, i) => (
             <DataItem
                 key={item.title + i}
                 title={item.title}
@@ -55,6 +92,7 @@ class DataSection extends Component {
                                 style={{ height: `100%`, borderRadius: '5px' }}
                             />
                         }
+                        isMarkerShown
                     />
                 </div>
             </div>

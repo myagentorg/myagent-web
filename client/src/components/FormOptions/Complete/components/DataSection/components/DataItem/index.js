@@ -8,7 +8,9 @@ class DataItem extends Component {
                 <div style={{ color: 'black', fontSize: '0.9em' }}>
                     {title.toUpperCase()}
                 </div>
-                <div>{value}</div>
+                <div style={{ fontSize: '1.25em', fontWeight: 500 }}>
+                    {value}
+                </div>
             </div>
         )
     }
