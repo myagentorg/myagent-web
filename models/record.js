@@ -73,14 +73,10 @@ const recordSchema = new Schema({
         trim: true,
         enum: ['approved', 'need a lender', 'no thanks']
     },
-    firstname: {
+    fullname: {
         type: String,
         trim: true,
         required: true
-    },
-    lastname: {
-        type: String,
-        trim: true
     },
     email: {
         type: String,
@@ -88,7 +84,7 @@ const recordSchema = new Schema({
         trim: true,
         required: true
     },
-    mobilephone: {
+    phone: {
         type: String
     },
     additionalinformation: {
