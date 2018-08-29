@@ -16,7 +16,6 @@ class ChooseMainPath extends Component {
             addNewField,
             form: { clientaddress, clientlatitude: lat, clientlongitude: lng }
         } = this.props
-        console.log(this.props)
         return (
             <FormContainer>
                 <h2>
