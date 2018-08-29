@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 
 import { Switch, Route } from 'react-router-dom'
 
-import Nav from './components/Nav'
 import Landing from './scenes/Landing'
 import ChooseMainPath from './scenes/ChooseMainPath'
 import Paths from './scenes/Paths'
@@ -14,7 +13,6 @@ class App extends Component {
     render() {
         return (
             <div className="app__wrapper">
-                <Nav />
                 <Switch>
                     <Route exact path="/" component={Landing} />
                     <Route path="/buyer-or-seller" component={ChooseMainPath} />

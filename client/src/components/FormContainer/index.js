@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import Nav from '../Nav'
+
 import background from '../../assets/background.jpg'
 
 import './index.css'
@@ -19,17 +21,20 @@ class FormContainer extends Component {
             filter: 'blur(3px)'
         }
         return (
-            <div className="form-container">
-                <div className="form-container__background" style={style} />
-                <div
-                    className="form-container__card"
-                    style={this.props.slim ? { maxWidth: '500px' } : null}
-                >
-                    <div className="form-container__wrapper">
-                        {this.props.children}
+            <React.Fragment>
+                <Nav />
+                <div className="form-container">
+                    <div className="form-container__background" style={style} />
+                    <div
+                        className="form-container__card"
+                        style={this.props.slim ? { maxWidth: '500px' } : null}
+                    >
+                        <div className="form-container__wrapper">
+                            {this.props.children}
+                        </div>
                     </div>
                 </div>
-            </div>
+            </React.Fragment>
         )
     }
 }
