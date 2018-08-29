@@ -12,7 +12,7 @@ app.use(morgan('dev'))
 app.use(express.static(path.join(__dirname, 'client', 'build')))
 
 mongoose.connect(
-    'mongodb://localhost/myagent_io',
+    process.env.MONGODB_URI || 'mongodb://localhost/myagent_io',
     { useNewUrlParser: true }
 )
 
