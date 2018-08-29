@@ -18,9 +18,6 @@ class Nav extends Component {
                             alt="myagent.io"
                         />
                     </Link>
-                    <a className="nav__phone" href="tel:878981099">
-                        (878) 981 099
-                    </a>
                 </div>
             </div>
         )
