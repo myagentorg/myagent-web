@@ -1,25 +1,29 @@
 .form-container {
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.618em;
+    /* padding: 0.618em; */
+    overflow: hidden;
     position: relative;
-    overflow-x: hidden;
+    min-height: 100%;
+    padding-top: 3.2em;
 }
 
 .form-container__background {
     position: absolute;
     height: 105%;
     width: 105%;
+    /* top: 2em;
+    bottom: 0; */
     z-index: -1;
+    overflow: hidden;
 }
 
 .form-container__card {
     background: rgba(255, 255, 255, 0.95);
     width: 100%;
     max-width: 700px;
-    margin: auto;
+    margin: 1em auto;
     padding: 1.618em 1em;
     border-radius: 5px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);

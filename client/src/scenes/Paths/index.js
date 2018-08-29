@@ -82,7 +82,7 @@ class Paths extends Component {
                 <Route
                     path={`/${mode}/contact`}
                     render={props => (
-                        <FormContainer>
+                        <FormContainer slim>
                             <Contact
                                 {...props}
                                 handleAddNewField={handleAddNewField}

@@ -15,12 +15,16 @@ class FormContainer extends Component {
                 url(${background})`,
             backgroundPosition: 'right 50% center',
             backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
             filter: 'blur(3px)'
         }
         return (
             <div className="form-container">
                 <div className="form-container__background" style={style} />
-                <div className="form-container__card">
+                <div
+                    className="form-container__card"
+                    style={this.props.slim ? { maxWidth: '500px' } : null}
+                >
                     <div className="form-container__wrapper">
                         {this.props.children}
                     </div>
