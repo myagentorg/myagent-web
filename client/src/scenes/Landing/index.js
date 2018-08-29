@@ -56,7 +56,7 @@ class Landing extends Component {
             <FormContainer>
                 <h2>Find Top Real Estate Agents in Your City</h2>
                 <p>
-                    Agent Pronto is a free service that helps you find a
+                    MyAgent.io is a free service that helps you find a
                     top-performing agent you can trust.
                 </p>
                 <p>
