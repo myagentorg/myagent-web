@@ -3,7 +3,7 @@ const app = express()
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
-const port = 49153
+const port = 8000
 
 app.use(bodyParser.json())
 app.use(morgan('dev'))
