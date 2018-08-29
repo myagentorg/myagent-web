@@ -2,21 +2,17 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const recordSchema = new Schema({
-    clientLocation: {
-        address: {
-            type: String,
-            require: true
-        },
-        latLng: {
-            lat: {
-                type: Number,
-                required: true
-            },
-            lng: {
-                type: Number,
-                required: true
-            }
-        }
+    clientAddress: {
+        type: String,
+        require: true
+    },
+    clientLatitude: {
+        type: Number,
+        required: true
+    },
+    clientLongitude: {
+        type: Number,
+        required: true
     },
     clientType: {
         type: String,
@@ -63,17 +59,13 @@ const recordSchema = new Schema({
         type: Number
     },
     sellingAddress: {
-        address: {
-            type: String
-        },
-        latLng: {
-            lat: {
-                type: Number
-            },
-            lng: {
-                type: Number
-            }
-        }
+        type: String
+    },
+    sellingLatitude: {
+        type: Number
+    },
+    sellingLongitude: {
+        type: Number
     },
     loan: {
         type: String,
@@ -81,24 +73,22 @@ const recordSchema = new Schema({
         trim: true,
         enum: ['approved', 'need a lender', 'no thanks']
     },
-    contact: {
-        name: {
-            type: String,
-            trim: true,
-            required: true
-        },
-        email: {
-            type: String,
-            lowercase: true,
-            trim: true,
-            required: true
-        },
-        phone: {
-            type: String
-        },
-        additionalInfo: {
-            type: String
-        }
+    name: {
+        type: String,
+        trim: true,
+        required: true
+    },
+    email: {
+        type: String,
+        lowercase: true,
+        trim: true,
+        required: true
+    },
+    phone: {
+        type: String
+    },
+    additionalInfo: {
+        type: String
     }
 })
 
