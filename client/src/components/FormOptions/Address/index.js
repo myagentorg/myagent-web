@@ -39,9 +39,7 @@ class Contact extends Component {
                     />
                     <Link
                         to={link || 'loan'}
-                        onClick={() =>
-                            handleAddNewField(field, this.state.address)
-                        }
+                        onClick={() => handleAddNewField(field, this.state)}
                     >
                         <Button>Next</Button>
                     </Link>
