@@ -71,7 +71,7 @@ const recordSchema = new Schema({
         type: String,
         required: true,
         trim: true,
-        enum: ['approved', 'need a lender', 'no thanks']
+        enum: ['approved', 'need a lender', 'skip']
     },
     fullname: {
         type: String,

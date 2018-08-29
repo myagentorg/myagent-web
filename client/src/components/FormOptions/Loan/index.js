@@ -31,9 +31,9 @@ class Loan extends Component {
                 <div>
                     <Link
                         to="contact"
-                        onClick={() => handleAddNewField(field, 'no thanks')}
+                        onClick={() => handleAddNewField(field, 'skip')}
                     >
-                        No thanks
+                        Skip
                     </Link>
                 </div>
             </div>
