@@ -17,8 +17,8 @@ class FormContainer extends Component {
                 url(${background})`,
             backgroundPosition: 'right 50% center',
             backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            filter: 'blur(3px)'
+            backgroundRepeat: 'no-repeat'
+            // filter: 'blur(3px)'
         }
         return (
             <React.Fragment>
