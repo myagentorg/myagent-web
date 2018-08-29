@@ -34,8 +34,6 @@ recordsRouter.route('/').post((req, res) => {
         )
     }
 
-    console.log(createHubspotBody(excludeVEntry(req.body)))
-
     axios
         .post(
             `https://api.hubapi.com/contacts/v1/contact/?hapikey=${
@@ -43,8 +41,8 @@ recordsRouter.route('/').post((req, res) => {
             }`,
             createHubspotBody(excludeVEntry(req.body))
         )
-        .then(response => console.log(response.data))
-        .catch(err => console.log(err.data))
+        // .then(response => console.log(response.data))
+        .catch(err => console.log(err))
 
     record.save((err, record) => {
         handleRequest(res, err, record, true)
