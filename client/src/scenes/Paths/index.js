@@ -62,7 +62,11 @@ class Paths extends Component {
                             <Address
                                 {...props}
                                 handleAddNewField={handleAddNewField}
-                                field="sellingAddress"
+                                fields={{
+                                    address: 'sellingAddress',
+                                    latitude: 'sellingLatitude',
+                                    longitude: 'sellingLongitude'
+                                }}
                             />
                         </FormContainer>
                     )}
@@ -86,7 +90,12 @@ class Paths extends Component {
                             <Contact
                                 {...props}
                                 handleAddNewField={handleAddNewField}
-                                field="contact"
+                                fields={{
+                                    name: 'name',
+                                    email: 'email',
+                                    phone: 'phone',
+                                    additionalInfo: 'additionalInfo'
+                                }}
                             />
                         </FormContainer>
                     )}

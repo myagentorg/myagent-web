@@ -87,7 +87,11 @@ class BothPaths extends Component {
                                 {...props}
                                 link="/buyer-and-seller/loan"
                                 handleAddNewField={handleAddNewField}
-                                field="sellingAddress"
+                                fields={{
+                                    address: 'sellingAddress',
+                                    latitude: 'sellingLatitude',
+                                    longitude: 'sellingLongitude'
+                                }}
                             />
                         </FormContainer>
                     )}
@@ -113,7 +117,12 @@ class BothPaths extends Component {
                                 {...props}
                                 link="/buyer-and-seller/complete"
                                 handleAddNewField={handleAddNewField}
-                                field="contact"
+                                fields={{
+                                    name: 'name',
+                                    email: 'email',
+                                    phone: 'phone',
+                                    additionalInfo: 'additionalInfo'
+                                }}
                             />
                         </FormContainer>
                     )}

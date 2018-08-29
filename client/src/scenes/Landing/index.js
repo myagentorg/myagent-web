@@ -18,7 +18,10 @@ class Landing extends Component {
         super()
         this.state = {
             address: '',
-            latLng: {},
+            latLng: {
+                lat: null,
+                lng: null
+            },
             validated: false,
             attemptFailed: false
         }
@@ -38,10 +41,10 @@ class Landing extends Component {
                 attemptFailed: true
             })
         } else {
-            this.props.addNewField('clientLocation', {
-                address: this.state.address,
-                latLng: this.state.latLng
-            })
+            const { latLng } = this.state
+            this.props.addNewField('clientAddress', this.state.address)
+            this.props.addNewField('clientLatitude', latLng.lat)
+            this.props.addNewField('clientLongitude', latLng.lng)
         }
     }
 

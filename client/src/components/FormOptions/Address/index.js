@@ -13,8 +13,18 @@ class Contact extends Component {
         super()
         this.state = {
             address: '',
-            latLng: {}
+            latLng: {
+                lat: null,
+                lng: null
+            }
         }
+    }
+
+    handleClick = () => {
+        const { address, latitude, longitude } = this.props.fields
+        this.props.handleAddNewField(address, this.state.address)
+        this.props.handleAddNewField(latitude, this.state.latLng.lat)
+        this.props.handleAddNewField(longitude, this.state.latLng.lng)
     }
 
     handleChange = address => {
@@ -26,7 +36,7 @@ class Contact extends Component {
     }
 
     render() {
-        const { link, handleAddNewField, field } = this.props
+        const { link } = this.props
         return (
             <div>
                 <h2>What is the address of the property you’re selling?</h2>
@@ -37,10 +47,7 @@ class Contact extends Component {
                         handleChange={this.handleChange}
                         handleSelection={this.handleSelection}
                     />
-                    <Link
-                        to={link || 'loan'}
-                        onClick={() => handleAddNewField(field, this.state)}
-                    >
+                    <Link to={link || 'loan'} onClick={this.handleClick}>
                         <Button>Next</Button>
                     </Link>
                 </div>
