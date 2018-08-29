@@ -13,7 +13,7 @@ class ContactForm extends Component {
                     <label>
                         <span>Your Name</span>
                         <Input
-                            name="name"
+                            name="fullname"
                             placeholder="Enter your first and last name"
                             required
                             textAlign="left"
@@ -37,7 +37,6 @@ class ContactForm extends Component {
                         <span>Phone Number</span>
                         <Input
                             name="phone"
-                            placeholder="(___) ___-___"
                             required
                             textAlign="left"
                             handleChange={this.props.handleChange}
@@ -51,7 +50,7 @@ class ContactForm extends Component {
                             matching you with a top real estate agent?
                         </span>
                         <TextArea
-                            name="additionalInfo"
+                            name="additionalinformation"
                             handleChange={this.props.handleChange}
                         />
                     </label>

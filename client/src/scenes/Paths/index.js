@@ -35,7 +35,7 @@ class Paths extends Component {
                                 mode={mode}
                                 {...props}
                                 handleAddNewField={handleAddNewField}
-                                field="propertyType"
+                                field="propertytype"
                             />
                         </FormContainer>
                     )}
@@ -63,9 +63,9 @@ class Paths extends Component {
                                 {...props}
                                 handleAddNewField={handleAddNewField}
                                 fields={{
-                                    address: 'sellingAddress',
-                                    latitude: 'sellingLatitude',
-                                    longitude: 'sellingLongitude'
+                                    address: 'sellingaddress',
+                                    latitude: 'sellinglatitude',
+                                    longitude: 'sellinglongitude'
                                 }}
                             />
                         </FormContainer>
@@ -91,10 +91,10 @@ class Paths extends Component {
                                 {...props}
                                 handleAddNewField={handleAddNewField}
                                 fields={{
-                                    name: 'name',
+                                    fullname: 'fullname',
                                     email: 'email',
                                     phone: 'phone',
-                                    additionalInfo: 'additionalInfo'
+                                    additionalinformation: 'additionalinfo'
                                 }}
                             />
                         </FormContainer>

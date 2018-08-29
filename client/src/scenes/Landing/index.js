@@ -42,9 +42,9 @@ class Landing extends Component {
             })
         } else {
             const { latLng } = this.state
-            this.props.addNewField('clientAddress', this.state.address)
-            this.props.addNewField('clientLatitude', latLng.lat)
-            this.props.addNewField('clientLongitude', latLng.lng)
+            this.props.addNewField('clientaddress', this.state.address)
+            this.props.addNewField('clientlatitude', latLng.lat)
+            this.props.addNewField('clientlongitude', latLng.lng)
         }
     }
 

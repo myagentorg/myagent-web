@@ -32,7 +32,7 @@ class BothPaths extends Component {
                                 mode="buyer"
                                 link="/buyer-and-seller/seller/property-type"
                                 handleAddNewField={handleAddNewField}
-                                field="propertyTypeBuying"
+                                field="propertytypebuying"
                             />
                         </FormContainer>
                     )}
@@ -46,7 +46,7 @@ class BothPaths extends Component {
                                 mode="seller"
                                 link="/buyer-and-seller/buyer/budget"
                                 handleAddNewField={handleAddNewField}
-                                field="propertyTypeSelling"
+                                field="propertytypeselling"
                             />
                         </FormContainer>
                     )}
@@ -88,9 +88,9 @@ class BothPaths extends Component {
                                 link="/buyer-and-seller/loan"
                                 handleAddNewField={handleAddNewField}
                                 fields={{
-                                    address: 'sellingAddress',
-                                    latitude: 'sellingLatitude',
-                                    longitude: 'sellingLongitude'
+                                    address: 'sellingaddress',
+                                    latitude: 'sellinglatitude',
+                                    longitude: 'sellinglongitude'
                                 }}
                             />
                         </FormContainer>
@@ -118,10 +118,11 @@ class BothPaths extends Component {
                                 link="/buyer-and-seller/complete"
                                 handleAddNewField={handleAddNewField}
                                 fields={{
-                                    name: 'name',
+                                    fullname: 'fullname',
                                     email: 'email',
                                     phone: 'phone',
-                                    additionalInfo: 'additionalInfo'
+                                    additionalinformation:
+                                        'additionalinformation'
                                 }}
                             />
                         </FormContainer>

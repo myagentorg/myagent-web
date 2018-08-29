@@ -9,23 +9,28 @@ class Contact extends Component {
     constructor() {
         super()
         this.state = {
-            name: '',
+            fullname: '',
             email: '',
             phone: '',
-            additionalInfo: ''
+            additionalinformation: ''
         }
     }
 
     handleClick = () => {
-        const { name, email, phone, additionalInfo } = this.props.fields
-        this.props.handleAddNewField(name, this.state.name)
+        const {
+            fullname,
+            email,
+            phone,
+            additionalinformation
+        } = this.props.fields
+        this.props.handleAddNewField(fullname, this.state.fullname)
         this.props.handleAddNewField(email, this.state.email)
         if (this.state.phone)
             this.props.handleAddNewField(phone, this.state.phone)
-        if (this.state.additionalInfo)
+        if (this.state.additionalinformation)
             this.props.handleAddNewField(
-                additionalInfo,
-                this.state.additionalInfo
+                additionalinformation,
+                this.state.additionalinformation
             )
     }
 
