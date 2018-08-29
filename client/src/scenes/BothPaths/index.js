@@ -130,11 +130,7 @@ class BothPaths extends Component {
                 />
                 <Route
                     path="/buyer-and-seller/complete"
-                    render={props => (
-                        <FormContainer>
-                            <Complete {...props} />
-                        </FormContainer>
-                    )}
+                    render={props => <Complete {...props} />}
                 />
             </Switch>
         )

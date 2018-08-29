@@ -102,11 +102,7 @@ class Paths extends Component {
                 />
                 <Route
                     path={`/${mode}/complete`}
-                    render={props => (
-                        <FormContainer>
-                            <Complete {...props} />
-                        </FormContainer>
-                    )}
+                    render={props => <Complete {...props} />}
                 />
             </Switch>
         )
