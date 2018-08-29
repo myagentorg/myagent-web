@@ -48,6 +48,7 @@ class SearchBox extends Component {
                 onSelect={address => {
                     this.innerSelectionFn(address, handleSelection)
                 }}
+                searchOptions={{ componentRestrictions: { country: 'us' } }}
             >
                 {({
                     getInputProps,
