@@ -64,17 +64,14 @@ const recordSchema = new Schema({
     },
     sellingAddress: {
         address: {
-            type: String,
-            required: true
+            type: String
         },
         latLng: {
             lat: {
-                type: Number,
-                required: true
+                type: Number
             },
             lng: {
-                type: Number,
-                required: true
+                type: Number
             }
         }
     },
