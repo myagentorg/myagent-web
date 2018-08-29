@@ -62,7 +62,7 @@ class Paths extends Component {
                             <Address
                                 {...props}
                                 handleAddNewField={handleAddNewField}
-                                field="address"
+                                field="sellingAddress"
                             />
                         </FormContainer>
                     )}
