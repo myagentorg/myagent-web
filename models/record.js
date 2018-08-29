@@ -2,24 +2,24 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const recordSchema = new Schema({
-    clientAddress: {
+    clientaddress: {
         type: String,
         require: true
     },
-    clientLatitude: {
+    clientlatitude: {
         type: Number,
         required: true
     },
-    clientLongitude: {
+    clientlongitude: {
         type: Number,
         required: true
     },
-    clientType: {
+    clienttype: {
         type: String,
         required: true,
         enum: ['buyer', 'seller', 'buyer-and-seller']
     },
-    propertyType: {
+    propertytype: {
         type: String,
         enum: [
             'single family',
@@ -30,7 +30,7 @@ const recordSchema = new Schema({
             'other'
         ]
     },
-    propertyTypeBuying: {
+    propertytypebuying: {
         type: String,
         enum: [
             'single family',
@@ -41,7 +41,7 @@ const recordSchema = new Schema({
             'other'
         ]
     },
-    propertyTypeSelling: {
+    propertytypeselling: {
         type: String,
         enum: [
             'single family',
@@ -58,13 +58,13 @@ const recordSchema = new Schema({
     price: {
         type: Number
     },
-    sellingAddress: {
+    sellingaddress: {
         type: String
     },
-    sellingLatitude: {
+    sellinglatitude: {
         type: Number
     },
-    sellingLongitude: {
+    sellinglongitude: {
         type: Number
     },
     loan: {
@@ -73,10 +73,14 @@ const recordSchema = new Schema({
         trim: true,
         enum: ['approved', 'need a lender', 'no thanks']
     },
-    name: {
+    firstname: {
         type: String,
         trim: true,
         required: true
+    },
+    lastname: {
+        type: String,
+        trim: true
     },
     email: {
         type: String,
@@ -84,10 +88,10 @@ const recordSchema = new Schema({
         trim: true,
         required: true
     },
-    phone: {
+    mobilephone: {
         type: String
     },
-    additionalInfo: {
+    additionalinformation: {
         type: String
     }
 })
