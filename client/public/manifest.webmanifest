@@ -1,0 +1,14 @@
+{
+    "name": "MyAgent.io",
+    "short_name": "MyAgent",
+    "start_url": ".",
+    "theme_color": "#EB3323",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "MyAgent.io is a service that helps you find a perfect real estate agent for you.",
+    "icons": [{
+      "src": "logo-square.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }]
+  }
