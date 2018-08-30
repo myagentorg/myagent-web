@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 import Button from '../../Button'
+import Slider from './components/Slider'
 
 import './index.css'
 
@@ -10,7 +11,8 @@ class Money extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            moneyNum: 250000
+            inputVal: 35,
+            moneyNum: 0
         }
         this.content = {
             buyer: {
@@ -22,6 +24,26 @@ class Money extends Component {
                 title: 'Roughly how much is your property worth?'
             }
         }
+        this.moneyValues = []
+    }
+
+    componentDidMount() {
+        let v = 0
+        let step = 5000
+        let firstTime = true
+        for (let i = 0; i < 121; i++) {
+            if (firstTime) {
+                this.moneyValues.push(v)
+                firstTime = false
+                continue
+            }
+            if (v >= 100000) step = 10000
+            if (v >= 1000000) step = 100000
+            this.moneyValues.push((v = v + step))
+        }
+        this.setState(prevState => ({
+            moneyNum: this.moneyValues[prevState.inputVal]
+        }))
     }
 
     formatCurrency = num => {
@@ -31,41 +53,33 @@ class Money extends Component {
 
     handleChange = e => {
         const { name, value } = e.target
-        this.setState({ [name]: parseInt(value, 10) })
+        this.setState({
+            [name]: parseInt(value, 10),
+            moneyNum: this.moneyValues[value]
+        })
     }
 
     render() {
         const {
             props: { mode, link, handleAddNewField, field },
-            state: { moneyNum },
+            state: { inputVal, moneyNum },
             content,
             handleChange
         } = this
         const moneyDisplay =
             moneyNum <= 0
                 ? `I'm not sure...`
-                : moneyNum < 1000000
+                : moneyNum < 2000000
                     ? this.formatCurrency(moneyNum)
-                    : '$1,000,000+'
+                    : '$2,000,000+'
         return (
             <div>
                 <h2>{content[mode].title}</h2>
                 <h3 style={{ fontSize: '2em' }}>{moneyDisplay}</h3>
-                <div className="money__slider--container">
-                    <input
-                        className="money__slider"
-                        name="moneyNum"
-                        type="range"
-                        min="0"
-                        max="1000000"
-                        step="10000"
-                        value={moneyNum}
-                        onChange={handleChange}
-                    />
-                </div>
+                <Slider inputVal={inputVal} handleChange={handleChange} />
                 <Link
                     to={link || content[mode].link}
-                    onClick={() => handleAddNewField(field, moneyNum)}
+                    onClick={() => handleAddNewField(field, inputVal)}
                 >
                     <Button>Next</Button>
                 </Link>
