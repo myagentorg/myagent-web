@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import PlacesAutocomplete, {
     getLatLng,
@@ -29,8 +29,8 @@ const StyledInput = styled.input`
     }
 `
 
-class SearchBox extends Component {
-    innerSelectionFn = (address, cb) => {
+const SearchBox = ({ value, handleChange, handleSelection, placeholder }) => {
+    const innerSelectionFn = (address, cb) => {
         geocodeByAddress(address)
             .then(results => getLatLng(results[0]))
             .then(latLng => {
@@ -40,51 +40,44 @@ class SearchBox extends Component {
             .catch(error => console.error('Error', error))
     }
 
-    render() {
-        const { value, handleChange, handleSelection } = this.props
-        return (
-            <PlacesAutocomplete
-                value={value}
-                onChange={handleChange}
-                onSelect={address => {
-                    this.innerSelectionFn(address, handleSelection)
-                }}
-                searchOptions={{ componentRestrictions: { country: 'us' } }}
-            >
-                {({
-                    getInputProps,
-                    suggestions,
-                    getSuggestionItemProps,
-                    loading
-                }) => (
-                    <div style={{ position: 'relative' }}>
-                        <StyledInput
-                            {...getInputProps({
-                                placeholder: this.props.placeholder
-                            })}
-                        />
-                        <div className="autocomplete-dropdown-container">
-                            {loading && <div>Loading...</div>}
-                            {suggestions.map(suggestion => {
-                                const className = suggestion.active
-                                    ? 'suggestion-item suggestion-item--active'
-                                    : 'suggestion-item'
-                                return (
-                                    <div
-                                        {...getSuggestionItemProps(suggestion, {
-                                            className
-                                        })}
-                                    >
-                                        <span>{suggestion.description}</span>
-                                    </div>
-                                )
-                            })}
-                        </div>
+    return (
+        <PlacesAutocomplete
+            value={value}
+            onChange={handleChange}
+            onSelect={address => {
+                innerSelectionFn(address, handleSelection)
+            }}
+            searchOptions={{ componentRestrictions: { country: 'us' } }}
+        >
+            {({
+                getInputProps,
+                suggestions,
+                getSuggestionItemProps,
+                loading
+            }) => (
+                <div style={{ position: 'relative' }}>
+                    <StyledInput {...getInputProps({ placeholder })} />
+                    <div className="autocomplete-dropdown-container">
+                        {loading && <div>Loading...</div>}
+                        {suggestions.map(suggestion => {
+                            const className = suggestion.active
+                                ? 'suggestion-item suggestion-item--active'
+                                : 'suggestion-item'
+                            return (
+                                <div
+                                    {...getSuggestionItemProps(suggestion, {
+                                        className
+                                    })}
+                                >
+                                    <span>{suggestion.description}</span>
+                                </div>
+                            )
+                        })}
                     </div>
-                )}
-            </PlacesAutocomplete>
-        )
-    }
+                </div>
+            )}
+        </PlacesAutocomplete>
+    )
 }
 
 export default SearchBox
