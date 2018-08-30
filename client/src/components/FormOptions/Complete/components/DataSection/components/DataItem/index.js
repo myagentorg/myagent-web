@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 
 class DataItem extends Component {
+    formatCurrency = num => {
+        num = num.toFixed(1).replace(/\d(?=(\d{3})+\.)/g, '$&,')
+        return `$${num.slice(0, num.length - 2)}`
+    }
     render() {
         const { title, style } = this.props
         let { value } = this.props
@@ -15,6 +19,12 @@ class DataItem extends Component {
                 .split(' ')
                 .map(x => x.slice(0, 1).toUpperCase() + x.slice(1))
                 .join(' ')
+        }
+        if (
+            lowercaseTitle === 'target budget' ||
+            lowercaseTitle === 'target price'
+        ) {
+            value = this.formatCurrency(value)
         }
         return (
             <div style={style}>

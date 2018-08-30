@@ -24,6 +24,11 @@ class Money extends Component {
         }
     }
 
+    formatCurrency = num => {
+        num = num.toFixed(1).replace(/\d(?=(\d{3})+\.)/g, '$&,')
+        return `$${num.slice(0, num.length - 2)}`
+    }
+
     handleChange = e => {
         const { name, value } = e.target
         this.setState({ [name]: parseInt(value, 10) })
@@ -40,8 +45,8 @@ class Money extends Component {
             moneyNum <= 0
                 ? `I'm not sure...`
                 : moneyNum < 1000000
-                    ? moneyNum
-                    : '1000000+'
+                    ? this.formatCurrency(moneyNum)
+                    : '$1,000,000+'
         return (
             <div>
                 <h2>{content[mode].title}</h2>
