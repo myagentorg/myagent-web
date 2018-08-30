@@ -8,7 +8,8 @@ class DataItem extends Component {
         if (
             lowercaseTitle === 'property type' ||
             lowercaseTitle === 'buying property type' ||
-            lowercaseTitle === 'selling property type'
+            lowercaseTitle === 'selling property type' ||
+            lowercaseTitle === 'loan'
         ) {
             value = value
                 .split(' ')

@@ -44,7 +44,7 @@ class DataSection extends Component {
             },
             {
                 title: 'Loan',
-                value: form.loan || 250000
+                value: form.loan || 'need a lender'
             }
         ]
         const filteredData = data.filter(item => {
@@ -52,15 +52,17 @@ class DataSection extends Component {
                 return (
                     item.title !== 'Buying Property Type' &&
                     item.title !== 'Selling Property Type' &&
-                    item.title !== 'Target Budget'
+                    item.title !== 'Target Budget' &&
+                    item.value !== 'skip'
                 )
             } else if (form.clienttype === 'buyer-and-seller') {
-                return item.title !== 'Property Type'
+                return item.title !== 'Property Type' && item.value !== 'skip'
             }
             return (
                 item.title !== 'Buying Property Type' &&
                 item.title !== 'Selling Property Type' &&
-                item.title !== 'Target Price'
+                item.title !== 'Target Price' &&
+                item.value !== 'skip'
             )
         })
         const mappedData = filteredData.map((item, i) => (
