@@ -80,7 +80,7 @@ class DataSection extends Component {
                 <div className="data-section__wrapper utility-wrapper">
                     <div className="data-section__data">{mappedData}</div>
                     <Map
-                        zoom={14}
+                        zoom={15}
                         lat={lat || false}
                         lng={lng || false}
                         containerElement={
