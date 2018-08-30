@@ -79,7 +79,7 @@ class Money extends Component {
                 <Slider inputVal={inputVal} handleChange={handleChange} />
                 <Link
                     to={link || content[mode].link}
-                    onClick={() => handleAddNewField(field, inputVal)}
+                    onClick={() => handleAddNewField(field, moneyNum)}
                 >
                     <Button>Next</Button>
                 </Link>
