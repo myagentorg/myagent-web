@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 
 class DataItem extends Component {
     render() {
-        const { title, value } = this.props
+        const { title, value, style } = this.props
         return (
-            <div>
+            <div style={style}>
                 <div style={{ color: 'black', fontSize: '0.9em' }}>
                     {title.toUpperCase()}
                 </div>

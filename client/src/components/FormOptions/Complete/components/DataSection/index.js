@@ -68,6 +68,9 @@ class DataSection extends Component {
                 key={item.title + i}
                 title={item.title}
                 value={item.value}
+                style={
+                    item.title === 'Address' ? { gridColumn: 'span 2' } : null
+                }
             />
         ))
         return (
@@ -75,6 +78,7 @@ class DataSection extends Component {
                 <div className="data-section__wrapper utility-wrapper">
                     <div className="data-section__data">{mappedData}</div>
                     <Map
+                        zoom={14}
                         lat={lat || false}
                         lng={lng || false}
                         containerElement={
