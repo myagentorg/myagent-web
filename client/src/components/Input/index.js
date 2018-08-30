@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import styled from 'styled-components'
 
@@ -6,6 +6,7 @@ const StyledInput = styled.input`
     display: block;
     margin: auto;
     font-size: inherit;
+    font-family: inherit;
     padding: 1em 1.618em;
     width: 100%;
     text-align: ${props => props.textAlign || 'center'};
@@ -21,30 +22,27 @@ const StyledInput = styled.input`
     }
 `
 
-class Input extends Component {
-    render() {
-        const {
-            name,
-            value,
-            placeholder,
-            handleChange,
-            required,
-            mode,
-            textAlign
-        } = this.props
-        return (
-            <StyledInput
-                mode={mode}
-                type="text"
-                name={name}
-                placeholder={placeholder}
-                textAlign={textAlign}
-                value={value}
-                onChange={handleChange}
-                required={required}
-            />
-        )
-    }
+const Input = ({
+    name,
+    value,
+    placeholder,
+    handleChange,
+    required,
+    mode,
+    textAlign
+}) => {
+    return (
+        <StyledInput
+            mode={mode}
+            type="text"
+            name={name}
+            placeholder={placeholder}
+            textAlign={textAlign}
+            value={value}
+            onChange={handleChange}
+            required={required}
+        />
+    )
 }
 
 export default Input

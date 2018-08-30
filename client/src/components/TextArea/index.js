@@ -8,6 +8,7 @@ const StyledTextArea = styled.textarea`
     height: 150px;
     margin: auto;
     font-size: inherit;
+    font-family: inherit;
     padding: 1em 1.618em;
     border-radius: 5px;
     border: 1px solid #aaa;
@@ -19,8 +20,8 @@ const StyledTextArea = styled.textarea`
     }
 `
 
-const TextArea = ({ handleChange, name }) => {
-    return <StyledTextArea name={name} onChange={handleChange} />
-}
+const TextArea = ({ handleChange, name }) => (
+    <StyledTextArea name={name} onChange={handleChange} />
+)
 
 export default TextArea

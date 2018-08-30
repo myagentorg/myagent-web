@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import styled from 'styled-components'
 
@@ -7,10 +7,8 @@ const StyledWarning = styled.div`
     text-align: left;
 `
 
-class Warning extends Component {
-    render() {
-        return <StyledWarning>{this.props.children}</StyledWarning>
-    }
-}
+const Warning = ({ children }) => (
+    <StyledWarning>{this.props.children}</StyledWarning>
+)
 
 export default Warning
