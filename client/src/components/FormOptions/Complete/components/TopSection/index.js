@@ -11,14 +11,10 @@ class TopSection extends Component {
         const { fullname } = this.props
         return (
             <div className="top-section">
-                <div className="top-section__wrapper utility-wrapper">
+                <div className="utility-wrapper top-section__wrapper">
                     <div className="top-section__logo">
                         <Link to="/">
-                            <img
-                                className="nav__logo"
-                                src={logo}
-                                alt="myagent.io"
-                            />
+                            <img src={logo} alt="myagent.io" />
                         </Link>
                     </div>
                     <h1>

@@ -28,10 +28,16 @@ class DataItem extends Component {
         }
         return (
             <div style={style}>
-                <div style={{ color: 'black', fontSize: '0.9em' }}>
+                <div
+                    style={{
+                        color: 'rgba(255, 255, 255, 0.85)',
+                        fontSize: '0.85em',
+                        fontWeight: 500
+                    }}
+                >
                     {title.toUpperCase()}
                 </div>
-                <div style={{ fontSize: '1.25em', fontWeight: 500 }}>
+                <div style={{ fontSize: '1.333em', fontWeight: 500 }}>
                     {value}
                 </div>
             </div>
