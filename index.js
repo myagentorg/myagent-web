@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const compression = require('compression')
 require('dotenv').config()
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
@@ -7,6 +8,7 @@ const morgan = require('morgan')
 const path = require('path')
 const port = process.env.PORT || 8000
 
+app.use(compression())
 app.use(bodyParser.json())
 app.use(morgan('dev'))
 app.use(express.static(path.join(__dirname, 'client', 'build')))
