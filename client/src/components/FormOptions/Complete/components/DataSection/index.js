@@ -23,7 +23,7 @@ class DataSection extends Component {
             },
             {
                 title: 'Target Budget',
-                value: form.bidget || 250000
+                value: form.budget || 250000
             },
             {
                 title: 'Target Price',
