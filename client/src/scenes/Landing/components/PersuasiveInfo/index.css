@@ -1,5 +1,8 @@
+.persuasive__groups {
+    background: rgba(0, 0, 0, 0.025);
+}
+
 .persuasive__text-content {
-    background: rgba(0, 0, 0, 0.05);
     padding-top: 1.618em;
     padding-bottom: 1em;
 }
@@ -14,6 +17,12 @@
         height: 100% !important;
     }
 
+    .persuasive__group .persuasive__text-content {
+        margin: 0 auto 0 0;
+        padding: 1.618em;
+        max-width: 575px;
+    }
+
     .persuasive__group:last-of-type {
         display: grid;
         grid-template-areas: 'a b';
@@ -21,6 +30,7 @@
 
     .persuasive__group:last-of-type .persuasive__text-content {
         grid-area: a !important;
+        margin: 0 0 0 auto;
     }
 
     .persuasive__group:last-of-type .persuasive__image {
