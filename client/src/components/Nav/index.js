@@ -8,13 +8,13 @@ import logo from '../../assets/logo.svg'
 
 const Nav = () => {
     return (
-        <div className="nav">
+        <nav className="nav">
             <div className="nav__wrapper utility-wrapper">
                 <Link to="/">
                     <img className="nav__logo" src={logo} alt="myagent.io" />
                 </Link>
             </div>
-        </div>
+        </nav>
     )
 }
 
