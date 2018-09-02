@@ -1,7 +1,6 @@
 .nav {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 1em 0;
-    position: absolute;
     width: 100%;
     background: #fff;
     z-index: 1;
@@ -10,7 +9,6 @@
 .nav__wrapper {
     display: flex;
     justify-content: space-between;
-    /* padding: 0 1em; */
 }
 
 .nav__logo {
