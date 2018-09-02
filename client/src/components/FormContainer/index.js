@@ -29,11 +29,9 @@ const FormContainer = ({ children, slim, staticHeight }) => {
                     className="form-container__card"
                     style={slim ? { maxWidth: '500px' } : null}
                 >
-                    {/* <div
-                        className="for-container__card--before"
-                        style={style}
-                    /> */}
-                    <div className="form-container__wrapper">{children}</div>
+                    <div className="form-container__card__wrapper">
+                        {children}
+                    </div>
                 </div>
             </div>
         </div>
