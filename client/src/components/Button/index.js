@@ -11,9 +11,11 @@ const StyledButton = styled.button`
     transition: all 0.25s;
     min-width: 150px;
     cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     &:hover,
     &:focus {
         background: royalblue;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
     }
     @media (min-width: 600px) {
         font-size: 1.618rem;
