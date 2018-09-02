@@ -46,13 +46,12 @@ class Landing extends Component {
     }
 
     render() {
-        const { handleChange, handleClick, handleSelection } = this
         return (
             <React.Fragment>
                 <MainForm
-                    handleSelection={handleSelection}
-                    handleClick={handleClick}
-                    handleChange={handleChange}
+                    handleSelection={this.handleSelection}
+                    handleClick={this.handleClick}
+                    handleChange={this.handleChange}
                     {...this.state}
                 />
                 <HowAppWorks />
