@@ -16,7 +16,6 @@ const StyledButton = styled.button`
     border: none;
     &:hover,
     &:focus {
-        background: royalblue;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
     }
     @media (min-width: 600px) {
