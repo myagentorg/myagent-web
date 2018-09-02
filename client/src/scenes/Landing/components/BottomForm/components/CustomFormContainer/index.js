@@ -1,12 +1,10 @@
 import React from 'react'
 
-import Nav from '../Nav'
-
-import background from '../../assets/background.jpg'
+import background from '../../../../../../assets/neighborhood-background.jpg'
 
 import './index.css'
 
-const FormContainer = ({ children, slim, staticHeight, noNav }) => {
+const CustomFormContainer = ({ children, slim, staticHeight, noNav }) => {
     const style = {
         background: `
                 linear-gradient(
@@ -21,14 +19,16 @@ const FormContainer = ({ children, slim, staticHeight, noNav }) => {
     }
     return (
         <React.Fragment>
-            {noNav ? null : <Nav />}
             <div
-                className="form-container"
+                className="custom-form-container"
                 style={staticHeight ? { minHeight: 'auto' } : null}
             >
-                <div className="form-container__background" style={style} />
                 <div
-                    className="form-container__card"
+                    className="custom-form-container__background"
+                    style={style}
+                />
+                <div
+                    className="custom-form-container__card"
                     style={slim ? { maxWidth: '500px' } : null}
                 >
                     <div className="form-container__wrapper">{children}</div>
@@ -38,4 +38,4 @@ const FormContainer = ({ children, slim, staticHeight, noNav }) => {
     )
 }
 
-export default FormContainer
+export default CustomFormContainer
