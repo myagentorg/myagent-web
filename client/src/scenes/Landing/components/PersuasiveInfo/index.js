@@ -13,9 +13,9 @@ const PersuasiveInfo = () => {
         backgroundSize: 'cover'
     })
     return (
-        <div>
-            <div>
-                <div style={getStyle(image1)} />
+        <div className="persuasive__groups">
+            <div className="persuasive__group">
+                <div className="persuasive__image" style={getStyle(image1)} />
                 <div className="utility-wrapper persuasive__text-content">
                     <h3>You Deserve a Top Agent</h3>
                     <p>
@@ -32,8 +32,8 @@ const PersuasiveInfo = () => {
                     </p>
                 </div>
             </div>
-            <div>
-                <div style={getStyle(image2)} />
+            <div className="persuasive__group">
+                <div className="persuasive__image" style={getStyle(image2)} />
                 <div className="utility-wrapper persuasive__text-content">
                     <h3>We Partner With Agents From Over 3,000 Brokerages</h3>
                     <p>

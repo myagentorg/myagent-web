@@ -1,4 +1,29 @@
 .persuasive__text-content {
+    background: rgba(0, 0, 0, 0.05);
     padding-top: 1.618em;
     padding-bottom: 1em;
+}
+
+@media (min-width: 800px) {
+    .persuasive__group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .persuasive__image {
+        height: 100% !important;
+    }
+
+    .persuasive__group:last-of-type {
+        display: grid;
+        grid-template-areas: 'a b';
+    }
+
+    .persuasive__group:last-of-type .persuasive__text-content {
+        grid-area: a !important;
+    }
+
+    .persuasive__group:last-of-type .persuasive__image {
+        grid-area: b !important;
+    }
 }
