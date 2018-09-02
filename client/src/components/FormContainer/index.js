@@ -6,7 +6,7 @@ import background from '../../assets/background.jpg'
 
 import './index.css'
 
-const FormContainer = ({ children, slim }) => {
+const FormContainer = ({ children, slim, staticHeight }) => {
     const style = {
         background: `
                 linear-gradient(
@@ -22,7 +22,10 @@ const FormContainer = ({ children, slim }) => {
     return (
         <React.Fragment>
             <Nav />
-            <div className="form-container">
+            <div
+                className="form-container"
+                style={staticHeight ? { minHeight: 'auto' } : null}
+            >
                 <div className="form-container__background" style={style} />
                 <div
                     className="form-container__card"
