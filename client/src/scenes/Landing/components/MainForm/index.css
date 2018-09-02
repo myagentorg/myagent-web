@@ -1,4 +1,4 @@
 .landing__input-n-form {
     display: grid;
-    gap: 1em;
+    grid-gap: 1em;
 }

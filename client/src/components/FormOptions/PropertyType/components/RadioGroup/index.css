@@ -59,7 +59,7 @@
 @media (min-width: 600px) {
     .radio-group {
         display: grid;
-        gap: 1em;
+        grid-gap: 1em;
         grid-template-columns: 1fr 1fr 1fr;
         /* grid-template-rows: 30px, auto; */
     }
