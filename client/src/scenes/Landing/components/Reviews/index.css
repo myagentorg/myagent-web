@@ -33,6 +33,7 @@
     font-style: italic;
     border-radius: 1px;
     margin: 2.777em 0 3em;
+    text-align: center;
 }
 
 @media (min-width: 600px) {
