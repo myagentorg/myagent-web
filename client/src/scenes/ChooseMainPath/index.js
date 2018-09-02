@@ -56,13 +56,13 @@ const ChooseMainPath = ({
                         style={{
                             height: `200px`,
                             marginTop: '1em',
-                            borderRadius: '5px',
-                            boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)'
+                            borderRadius: '1px',
+                            boxShadow: '0 3px 6px rgba(0, 0, 0, 0.15)'
                         }}
                     />
                 }
                 mapElement={
-                    <div style={{ height: `100%`, borderRadius: '5px' }} />
+                    <div style={{ height: `100%`, borderRadius: '1px' }} />
                 }
             />
         </FormContainer>
