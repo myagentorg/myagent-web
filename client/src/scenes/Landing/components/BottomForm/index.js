@@ -16,7 +16,7 @@ const BottomForm = ({
     handleClick
 }) => {
     return (
-        <CustomFormContainer staticHeight noNav>
+        <CustomFormContainer staticHeight>
             <h2>MyAgent.io is Fast, Free, and Easy</h2>
             <p>
                 Our service is 100% free to use for home buyers and sellers.
