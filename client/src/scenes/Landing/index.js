@@ -10,8 +10,6 @@ import Reviews from './components/Reviews'
 import BottomForm from './components/BottomForm'
 import Footer from './components/Footer'
 
-import './index.css'
-
 class Landing extends Component {
     constructor() {
         super()

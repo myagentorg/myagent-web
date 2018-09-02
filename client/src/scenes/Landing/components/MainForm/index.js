@@ -7,6 +7,8 @@ import SearchBox from '../../../../components/SearchBox'
 import Warning from '../../../../components/Warning'
 import Button from '../../../../components/Button'
 
+import './index.css'
+
 const MainForm = ({
     address,
     handleChange,
