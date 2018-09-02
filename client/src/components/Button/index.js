@@ -12,6 +12,7 @@ const StyledButton = styled.button`
     min-width: 150px;
     cursor: pointer;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    border: none;
     &:hover,
     &:focus {
         background: royalblue;
