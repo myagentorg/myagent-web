@@ -6,7 +6,13 @@ import background from '../../assets/background.jpg'
 
 import './index.css'
 
-const FormContainer = ({ children, slim, staticHeight, noNav }) => {
+const FormContainer = ({
+    children,
+    slim,
+    staticHeight,
+    staticOverflow,
+    noNav
+}) => {
     const style = {
         background: `
                 linear-gradient(
@@ -19,13 +25,17 @@ const FormContainer = ({ children, slim, staticHeight, noNav }) => {
         backgroundRepeat: 'no-repeat'
         // filter: 'blur(3px)'
     }
+    const containerStyle = {}
+    if (staticHeight) {
+        containerStyle.minHeight = 'auto'
+    }
+    if (staticOverflow) {
+        containerStyle.overflow = 'initial'
+    }
     return (
         <React.Fragment>
             {noNav ? null : <Nav />}
-            <div
-                className="form-container"
-                style={staticHeight ? { minHeight: 'auto' } : null}
-            >
+            <div className="form-container" style={containerStyle}>
                 <div className="form-container__background" style={style} />
                 <div
                     className="form-container__card"

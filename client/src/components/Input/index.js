@@ -10,7 +10,7 @@ const StyledInput = styled.input`
     padding: 1em 1.618em;
     width: 100%;
     text-align: ${props => props.textAlign || 'center'};
-    border-radius: 5px;
+    border-radius: 1px;
     border: ${props =>
         props.mode === 'red' ? '1px solid red' : '1px solid #aaa'};
     outline: none;

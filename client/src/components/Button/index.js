@@ -3,11 +3,12 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledButton = styled.button`
-    background: dodgerblue;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
     color: white;
     font-size: 1.414rem;
-    padding: 0.75em 1em;
-    border-radius: 5px;
+    font-weight: 500;
+    padding: 0.618em 1em;
+    border-radius: 1px;
     transition: all 0.25s;
     min-width: 150px;
     cursor: pointer;

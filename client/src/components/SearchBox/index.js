@@ -17,7 +17,8 @@ const StyledInput = styled.input`
     padding: 1em 1.618em;
     width: 100%;
     text-align: ${props => props.textAlign || 'center'};
-    border-radius: 5px;
+    border-radius: 1px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     border: ${props =>
         props.mode === 'red' ? '1px solid red' : '1px solid #aaa'};
     outline: none;
