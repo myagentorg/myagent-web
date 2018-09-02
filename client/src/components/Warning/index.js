@@ -7,8 +7,6 @@ const StyledWarning = styled.div`
     text-align: left;
 `
 
-const Warning = ({ children }) => (
-    <StyledWarning>{this.props.children}</StyledWarning>
-)
+const Warning = ({ children }) => <StyledWarning>{children}</StyledWarning>
 
 export default Warning
