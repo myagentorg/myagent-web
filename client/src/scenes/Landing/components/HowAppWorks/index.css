@@ -1,0 +1,52 @@
+.how-app-works {
+    padding-top: 1.618em;
+    padding-bottom: 1.618em;
+}
+
+.how-app-works__headline {
+    font-size: 1.333em;
+    text-align: center;
+    padding-bottom: 1em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.color-emphasize {
+    color: dodgerblue;
+    font-weight: 600;
+}
+
+.step__img {
+    margin: 2em auto;
+    max-width: 80%;
+}
+
+.step__number {
+    float: left;
+    height: 40px;
+    width: 40px;
+    margin-right: 0.422em;
+    font-size: 1.777em;
+    text-align: center;
+    position: relative;
+    color: dodgerblue;
+}
+
+.step__number::after {
+    content: '';
+    position: absolute;
+    /* width of the border for left and top position */
+    left: -2px;
+    top: -2px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid dodgerblue;
+}
+
+@media (min-width: 600px) {
+    .how-app-works__steps {
+        display: grid;
+        gap: 1em;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
