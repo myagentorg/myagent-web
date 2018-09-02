@@ -4,3 +4,12 @@
     grid-gap: 1em;
     margin-bottom: 1em;
 }
+
+.loan__small-text {
+    color: gray;
+    transition: color 0.25s;
+}
+
+.loan__small-text:hover {
+    color: #ff0000;
+}

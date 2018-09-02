@@ -26,6 +26,7 @@ const Loan = ({ handleAddNewField, field }) => {
             </div>
             <div>
                 <Link
+                    className="loan__small-text"
                     to="contact"
                     onClick={() => handleAddNewField(field, 'skip')}
                 >
