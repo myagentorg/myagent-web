@@ -1,18 +1,21 @@
 .money__slider--container {
     width: 100%;
+    position: relative;
 }
 
 .money__slider {
     appearance: none;
     display: block;
     background: #d3d3d3;
-    border-radius: 100px;
-    height: 15px;
+    border: 1px solid #aaa;
+    border-radius: 1px;
+    height: 20px;
     outline: none;
     opacity: 0.7;
     margin: 0 auto 1.618em;
     width: 100%;
     transition: opacity 0.2s;
+    position: relative;
 }
 
 .money__slider:hover {
@@ -24,15 +27,16 @@
     appearance: none;
     width: 30px;
     height: 30px;
-    border-radius: 50%;
-    background: dodgerblue;
+    border-radius: 1px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.33);
+    background: linear-gradient(to right, #ff416c, #ff4b2b 125%);
     cursor: pointer;
 }
 
 .money__slider::-moz-range-thumb {
     width: 30px;
     height: 30px;
-    border-radius: 50%;
-    background: dodgerblue;
+    border-radius: 1px;
+    background: linear-gradient(to right, #ff416c, #ff4b2b 125%);
     cursor: pointer;
 }

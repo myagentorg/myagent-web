@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Slider = ({ inputVal, handleChange }) => {
+    console.log(inputVal)
     return (
         <div className="money__slider--container">
             <input
