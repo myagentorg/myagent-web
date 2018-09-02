@@ -4,6 +4,11 @@ import { connect } from 'react-redux'
 import { addNewField } from '../../redux/reducers/formReducer'
 
 import MainForm from './components/MainForm'
+import HowAppWorks from './components/HowAppWorks'
+import PersuasiveInfo from './components/PersuasiveInfo'
+import Reviews from './components/Reviews'
+import BottomForm from './components/BottomForm'
+import Footer from './components/Footer'
 
 import './index.css'
 
@@ -52,11 +57,11 @@ class Landing extends Component {
                     handleChange={handleChange}
                     {...this.state}
                 />
-                {/* HowAppWorks */}
-                {/* PersuasiveInfo */}
-                {/* Review */}
-                {/* BottomForm */}
-                {/* Footer */}
+                <HowAppWorks />
+                <PersuasiveInfo />
+                <Reviews />
+                <BottomForm />
+                <Footer />
             </React.Fragment>
         )
     }
