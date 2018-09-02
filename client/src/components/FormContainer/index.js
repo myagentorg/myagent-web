@@ -6,7 +6,7 @@ import background from '../../assets/background.jpg'
 
 import './index.css'
 
-const FormContainer = ({ children, slim, staticHeight, staticOverflow }) => {
+const FormContainer = ({ children, slim, staticHeight }) => {
     const style = {
         background: `
                 linear-gradient(
@@ -14,7 +14,7 @@ const FormContainer = ({ children, slim, staticHeight, staticOverflow }) => {
                     rgba(255, 230, 230, 0.25)
                 ),
                 url(${background})`,
-        backgroundPosition: '70% 100%',
+        backgroundPosition: '70% 50%',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat'
     }
@@ -23,7 +23,7 @@ const FormContainer = ({ children, slim, staticHeight, staticOverflow }) => {
     return (
         <div className="form-container" style={containerStyle}>
             <Nav />
-            <div className="form-container__wrapper" style={containerStyle}>
+            <div className="form-container__wrapper">
                 <div className="form-container__background" style={style} />
                 <div
                     className="form-container__card"

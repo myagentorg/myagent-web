@@ -18,7 +18,7 @@ const MainForm = ({
     handleClick
 }) => {
     return (
-        <FormContainer staticHeight staticOverflow>
+        <FormContainer staticHeight>
             <h2>Find Top Real Estate Agents in Your City</h2>
             <p>
                 MyAgent.io is a free service that helps you find a

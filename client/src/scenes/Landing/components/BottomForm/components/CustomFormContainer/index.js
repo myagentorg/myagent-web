@@ -4,7 +4,7 @@ import background from '../../../../../../assets/neighborhood-background.jpg'
 
 import './index.css'
 
-const CustomFormContainer = ({ children, slim, staticHeight, noNav }) => {
+const CustomFormContainer = ({ children, slim, staticHeight }) => {
     const style = {
         background: `
                 linear-gradient(
@@ -12,17 +12,15 @@ const CustomFormContainer = ({ children, slim, staticHeight, noNav }) => {
                     rgba(255, 230, 230, 0.25)
                 ),
                 url(${background})`,
-        backgroundPosition: 'right 50% center',
+        backgroundPosition: '70% 100%',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat'
-        // filter: 'blur(3px)'
     }
+    const containerStyle = {}
+    if (staticHeight) containerStyle.minHeight = 'auto'
     return (
-        <React.Fragment>
-            <div
-                className="custom-form-container"
-                style={staticHeight ? { minHeight: 'auto' } : null}
-            >
+        <div className="custom-form-container" style={containerStyle}>
+            <div className="custom-form-container__wrapper">
                 <div
                     className="custom-form-container__background"
                     style={style}
@@ -31,10 +29,16 @@ const CustomFormContainer = ({ children, slim, staticHeight, noNav }) => {
                     className="custom-form-container__card"
                     style={slim ? { maxWidth: '500px' } : null}
                 >
-                    <div className="form-container__wrapper">{children}</div>
+                    {/* <div
+                        className="for-container__card--before"
+                        style={style}
+                    /> */}
+                    <div className="custom-form-container__wrapper">
+                        {children}
+                    </div>
                 </div>
             </div>
-        </React.Fragment>
+        </div>
     )
 }
 
