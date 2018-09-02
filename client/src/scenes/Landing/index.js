@@ -6,7 +6,7 @@ import { addNewField } from '../../redux/reducers/formReducer'
 import MainForm from './components/MainForm'
 import HowAppWorks from './components/HowAppWorks'
 import PersuasiveInfo from './components/PersuasiveInfo'
-// import Reviews from './components/Reviews'
+import Reviews from './components/Reviews'
 import BottomForm from './components/BottomForm'
 import Footer from './components/Footer'
 
@@ -56,7 +56,7 @@ class Landing extends Component {
                 />
                 <HowAppWorks />
                 <PersuasiveInfo />
-                {/* <Reviews /> */}
+                <Reviews />
                 <BottomForm
                     handleSelection={this.handleSelection}
                     handleClick={this.handleClick}

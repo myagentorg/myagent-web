@@ -1,0 +1,44 @@
+.reviews {
+    padding-top: 2.777em;
+    padding-bottom: 2em;
+}
+
+.reviews__title,
+.reviews__featured-review {
+    text-align: center;
+}
+
+.reviews__featured-review {
+    font-size: 1.333em;
+}
+
+.featured-review__stars {
+    margin: auto;
+    padding: 10px 0;
+    height: 60px;
+}
+
+.featured-review__review {
+    font-style: italic;
+}
+
+.featured-review__credit {
+    display: inline-block;
+    font-style: italic;
+}
+
+.reviews__shopper-approved {
+    border: 1px solid #ccc;
+    padding: 1em;
+    font-style: italic;
+    border-radius: 1px;
+    margin: 2.777em 0 3em;
+}
+
+@media (min-width: 600px) {
+    .reviews__others {
+        display: grid;
+        grid-gap: 1em;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

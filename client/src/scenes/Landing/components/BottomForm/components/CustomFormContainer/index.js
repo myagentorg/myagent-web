@@ -29,10 +29,6 @@ const CustomFormContainer = ({ children, slim, staticHeight }) => {
                     className="custom-form-container__card"
                     style={slim ? { maxWidth: '500px' } : null}
                 >
-                    {/* <div
-                        className="for-container__card--before"
-                        style={style}
-                    /> */}
                     <div className="custom-form-container__wrapper">
                         {children}
                     </div>

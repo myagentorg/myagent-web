@@ -1,0 +1,15 @@
+.review__stars {
+    margin: auto;
+    height: 22.5px;
+}
+
+.review__author {
+    text-align: center;
+    font-weight: bold;
+    padding: 0.618em 0;
+}
+
+.review__review {
+    margin-top: 0;
+    padding-bottom: 1.618em;
+}
