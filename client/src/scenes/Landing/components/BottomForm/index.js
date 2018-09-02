@@ -1,7 +1,7 @@
 import React from 'react'
 
 const BottomForm = () => {
-    return <div>BottomForm</div>
+    return <div className="utility-wrapper">BottomForm</div>
 }
 
 export default BottomForm
