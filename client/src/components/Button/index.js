@@ -12,11 +12,12 @@ const StyledButton = styled.button`
     transition: all 0.25s;
     min-width: 150px;
     cursor: pointer;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border: none;
     &:hover,
     &:focus {
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 0 6px #ff0000, 0 3px 10px rgba(0, 0, 0, 0.2);
+        transform: translateY(-1px);
     }
     @media (min-width: 600px) {
         font-size: 1.618rem;
