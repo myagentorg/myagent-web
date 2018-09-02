@@ -7,7 +7,7 @@ const StyledInput = styled.input`
     margin: auto;
     font-size: inherit;
     font-family: inherit;
-    padding: 1em 1.618em;
+    padding: 1em;
     width: 100%;
     text-align: ${props => props.textAlign || 'center'};
     border-radius: 1px;
