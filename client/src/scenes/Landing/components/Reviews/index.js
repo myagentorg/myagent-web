@@ -11,7 +11,7 @@ const Reviews = () => {
         {
             name: 'Francine L.',
             review:
-                'Agent Pronto connected me with a Realtor very quickly—within an hour of visiting their website—and the Realtor we had was second to none! We will recommend Agent Pronto to others and will use them again in the future.'
+                'MyAgent.io connected me with a Realtor very quickly—within an hour of visiting their website—and the Realtor we had was second to none! We will recommend MyAgent.io to others and will use them again in the future.'
         },
         {
             name: 'Darah J.',
@@ -21,7 +21,7 @@ const Reviews = () => {
         {
             name: 'Tim D.',
             review:
-                'The service was fast and effective! Within minutes, I was contacted by their representatives and put in contact with a very helpful agent. Great experience—wouldn’t hesitate to use Agent Pronto again in another city.'
+                'The service was fast and effective! Within minutes, I was contacted by their representatives and put in contact with a very helpful agent. Great experience—wouldn’t hesitate to use MyAgent.io again in another city.'
         }
     ]
     const mappedReviews = reviews.map((review, i) => (
