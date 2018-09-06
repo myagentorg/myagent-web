@@ -2,3 +2,12 @@
     display: grid;
     grid-gap: 1em;
 }
+
+.address__small-text {
+    color: gray;
+    transition: color 0.25s;
+}
+
+.address__small-text:hover {
+    color: #ff0000;
+}

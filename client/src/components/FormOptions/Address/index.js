@@ -50,6 +50,9 @@ class Contact extends Component {
                     <Link to={link || 'loan'} onClick={this.handleClick}>
                         <Button>Next</Button>
                     </Link>
+                    <Link className="address__small-text" to={link || 'loan'}>
+                        Skip
+                    </Link>
                 </div>
             </div>
         )
