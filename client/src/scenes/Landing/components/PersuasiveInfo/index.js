@@ -57,7 +57,7 @@ const PersuasiveInfo = () => {
                     }}
                 />
                 <div className="utility-wrapper persuasive__text-content">
-                    <h3>We Partner With Agents From Over 3,000 Brokerages</h3>
+                    <h3>We Partner With Agents From the Top Brokerages Around the Country</h3>
                     <p>
                         MyAgent.io is an independent service that works with
                         agents across many different brokerages.
