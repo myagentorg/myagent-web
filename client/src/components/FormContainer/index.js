@@ -6,7 +6,7 @@ import background from '../../assets/background.jpg'
 
 import './index.css'
 
-const FormContainer = ({ children, slim, staticHeight }) => {
+const FormContainer = ({ children, slim, staticHeight, insetShadow }) => {
     const style = {
         background: `
                 linear-gradient(
@@ -19,7 +19,9 @@ const FormContainer = ({ children, slim, staticHeight }) => {
         backgroundRepeat: 'no-repeat'
     }
     const containerStyle = {}
-    if (staticHeight) containerStyle.minHeight = 'auto'
+    if (staticHeight) containerStyle.minHeight = '600px'
+    if (insetShadow)
+        containerStyle.boxShadow = 'inset 0 -4px 6px rgba(0, 0, 0, 0.1)'
     return (
         <div className="form-container" style={containerStyle}>
             <Nav />
