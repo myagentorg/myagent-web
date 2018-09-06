@@ -9,8 +9,9 @@ const StyledTextArea = styled.textarea`
     margin: auto;
     font-size: inherit;
     font-family: inherit;
-    padding: 1em 1.618em;
-    border-radius: 5px;
+    padding: 1em;
+    border-radius: 1px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     border: 1px solid #aaa;
     resize: vertical;
     outline: none;
