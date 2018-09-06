@@ -7,7 +7,7 @@ import './index.css'
 
 const PersuasiveInfo = () => {
     const getStyle = image => ({
-        height: '250px',
+        height: '300px',
         width: '100%',
         background: `url(${image})`,
         backgroundSize: 'cover'
@@ -15,7 +15,13 @@ const PersuasiveInfo = () => {
     return (
         <div className="persuasive__groups">
             <div className="persuasive__group">
-                <div className="persuasive__image" style={getStyle(image1)} />
+                <div
+                    className="persuasive__image"
+                    style={{
+                        ...getStyle(image1),
+                        backgroundPosition: '55% 30%'
+                    }}
+                />
                 <div className="utility-wrapper persuasive__text-content">
                     <h3>You Deserve a Top Agent</h3>
                     <p>
@@ -43,7 +49,13 @@ const PersuasiveInfo = () => {
                 </div>
             </div>
             <div className="persuasive__group">
-                <div className="persuasive__image" style={getStyle(image2)} />
+                <div
+                    className="persuasive__image"
+                    style={{
+                        ...getStyle(image2),
+                        backgroundPosition: '60% 10%'
+                    }}
+                />
                 <div className="utility-wrapper persuasive__text-content">
                     <h3>We Partner With Agents From Over 3,000 Brokerages</h3>
                     <p>
