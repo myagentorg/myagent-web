@@ -3,6 +3,28 @@ require('dotenv').config()
 const recordsRouter = express.Router()
 const Record = require('../models/record')
 const axios = require('axios')
+const nodemailer = require('nodemailer')
+
+const transporter = nodemailer.createTransport({
+    host: '208.71.173.110',
+    port: 587,
+    tls: {
+        rejectUnauthorized: false
+    },
+    secure: false,
+    auth: {
+        user: 'info@myagent.io',
+        pass: 'dH,3@ap4Hl0&'
+    }
+})
+
+transporter.verify(function(error, success) {
+    if (error) {
+        console.log(error)
+    } else {
+        console.log('Server is ready to take our messages')
+    }
+})
 
 const handleRequest = (res, err, data, isPost = false) => {
     if (err) return res.status(500).send(err)
@@ -34,14 +56,46 @@ recordsRouter.route('/').post((req, res) => {
         )
     }
 
+    const hubspotBody = createHubspotBody(excludeVEntry(req.body))
+
     axios
         .post(
             `https://api.hubapi.com/contacts/v1/contact/?hapikey=${
                 process.env.HUBSPOT_KEY
             }`,
-            createHubspotBody(excludeVEntry(req.body))
+            hubspotBody
         )
-        // .then(response => console.log(response.data))
+        .then(response => {
+            const clientProperties = excludeVEntry(req.body)
+
+            const mailHTML = Object.keys(clientProperties).reduce(
+                (html, key) => {
+                    html += `<li>${key}: ${clientProperties[key]}</li>`
+                    return html
+                },
+                ``
+            )
+
+            const mailOptions = {
+                from: 'info@myagent.io',
+                to: 'info@monopolydigital.com',
+                subject: 'Lead received from MyAgent.io',
+                html: `
+                    <div>
+                        <ul>${mailHTML}</ul>
+                        <p>To manage your leads, log into <a href="https://hubspot.com">hubspot.com</a>.</p>
+                    </div>
+                `
+            }
+
+            transporter.sendMail(mailOptions, (error, info) => {
+                if (error) {
+                    console.log(error)
+                } else {
+                    console.log(`Email sent: ${info.response}`)
+                }
+            })
+        })
         .catch(err => console.log(err))
 
     record.save((err, record) => {
