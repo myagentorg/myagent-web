@@ -1,0 +1,20 @@
+.detailed-info {
+    padding-bottom: 2em;
+}
+
+.detailed-info__wrapper {
+    max-width: calc(700px + 2em);
+    margin: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.detailed-info__heading {
+    margin-top: 1.618em;
+    margin-bottom: 0;
+    font-size: 1.333em;
+}
+
+.detailed-info__heading:first-child {
+    margin-top: 0;
+}
