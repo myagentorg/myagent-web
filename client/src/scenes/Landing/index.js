@@ -7,7 +7,7 @@ import MainForm from './components/MainForm'
 import HowAppWorks from './components/HowAppWorks'
 import PersuasiveInfo from './components/PersuasiveInfo'
 import Reviews from './components/Reviews'
-import DetailedInfo from './components/DetailedInfo'
+// import DetailedInfo from './components/DetailedInfo'
 import BottomForm from './components/BottomForm'
 import Footer from './components/Footer'
 
@@ -58,7 +58,7 @@ class Landing extends Component {
                 <HowAppWorks />
                 <PersuasiveInfo />
                 <Reviews />
-                <DetailedInfo />
+                {/* <DetailedInfo /> */}
                 <BottomForm
                     handleSelection={this.handleSelection}
                     handleClick={this.handleClick}
