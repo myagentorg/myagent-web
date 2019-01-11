@@ -8,6 +8,6 @@ const rootReducer = combineReducers({ form, contentful })
 
 const store = createStore(rootReducer, applyMiddleware(thunk))
 
-store.subscribe(() => console.log(store.getState().contentful))
+// store.subscribe(() => console.log(store.getState().contentful))
 
 export default store

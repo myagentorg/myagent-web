@@ -15,18 +15,15 @@ import BottomForm from './components/BottomForm'
 import Footer from './components/Footer'
 
 class Landing extends Component {
-  constructor() {
-    super()
-    this.state = {
-      address: '',
-      latLng: {
-        lat: null,
-        lng: null
-      },
-      validated: false,
-      attemptFailed: false,
-      startedCitySearch: false
-    }
+  state = {
+    address: '',
+    latLng: {
+      lat: null,
+      lng: null
+    },
+    validated: false,
+    attemptFailed: false,
+    startedCitySearch: false
   }
 
   componentDidMount() {
@@ -46,9 +43,7 @@ class Landing extends Component {
 
   handleClick = () => {
     if (!this.state.validated) {
-      this.setState({
-        attemptFailed: true
-      })
+      this.setState({ attemptFailed: true })
     } else {
       const { latLng } = this.state
       this.props.addNewField('clientaddress', this.state.address)
@@ -58,13 +53,13 @@ class Landing extends Component {
   }
 
   render() {
-    const { city, loading, cityImage } = this.props
+    const { cityData, loading } = this.props
 
     if (
       this.state.startedCitySearch &&
       !loading &&
       this.props.match.path !== '/' &&
-      city.toLowerCase() === 'your city'
+      cityData.city.toLowerCase() === 'your city'
     ) {
       return <Redirect to="/" />
     }
@@ -75,14 +70,13 @@ class Landing extends Component {
           handleSelection={this.handleSelection}
           handleClick={this.handleClick}
           handleChange={this.handleChange}
+          cityData={cityData}
           {...this.state}
-          city={city}
-          cityImage={cityImage}
         />
         <HowAppWorks />
         <PersuasiveInfo />
         <Reviews />
-        <DetailedInfo city={city} />
+        <DetailedInfo city={cityData.city} />
         <BottomForm
           handleSelection={this.handleSelection}
           handleClick={this.handleClick}
@@ -96,9 +90,8 @@ class Landing extends Component {
 }
 
 const mapStateToProps = state => ({
-  city: state.contentful.city,
-  loading: state.contentful.loading,
-  cityImage: state.contentful.mainImage
+  cityData: state.contentful,
+  loading: state.contentful.loading
 })
 
 export default connect(

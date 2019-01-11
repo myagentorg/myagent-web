@@ -16,20 +16,21 @@ const MainForm = ({
   attemptFailed,
   validated,
   handleClick,
-  city = 'Your City',
-  cityImage
+  cityData
 }) => {
   return (
-    <FormContainer staticHeight insetShadow cityImage={cityImage}>
-      <h2>Find Top Real Estate Agents in {city}</h2>
-      <p>
-        MyAgent.io is a free service that helps you find a top-performing agent
-        you can trust.
-      </p>
-      <p>Get started today by entering a city or neighborhood below.</p>
+    <FormContainer staticHeight insetShadow cityImage={cityData.mainImage}>
+      <h2>{cityData.topFormTitle}</h2>
+      <div>
+        {cityData.topFormParagraph.content
+          ? cityData.topFormParagraph.content.map(p => (
+              <p key={p.content[0].value}>{p.content[0].value}</p>
+            ))
+          : cityData.topFormParagraph.map(p => <p key={p}>{p}</p>)}
+      </div>
       <div className="landing__input-n-form">
         <SearchBox
-          placeholder="Enter a city or neighborhood..."
+          placeholder={cityData.topFormSearchBoxPlaceholder}
           value={address}
           handleChange={handleChange}
           handleSelection={handleSelection}
@@ -40,7 +41,7 @@ const MainForm = ({
           tabIndex="-1"
           onClick={handleClick}
         >
-          <Button>Find Your Perfect Agent</Button>
+          <Button>{cityData.topFormCallToAction}</Button>
         </Link>
       </div>
     </FormContainer>
