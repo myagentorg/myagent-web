@@ -13,7 +13,7 @@ const DetailedInfo = ({ cityData }) => {
               return (
                 <React.Fragment key={detailedText.fields.title}>
                   <h3 className="detailed-info__heading">
-                    {detailedText.fields.title} {i === 0 && cityData.city}
+                    {detailedText.fields.title}
                   </h3>
                   <div className="detailed-info__content">
                     {
