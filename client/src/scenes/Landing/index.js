@@ -75,7 +75,7 @@ class Landing extends Component {
         />
         <HowAppWorks cityData={cityData} />
         <PersuasiveInfo cityData={cityData} />
-        <Reviews />
+        <Reviews cityData={cityData} />
         <DetailedInfo city={cityData.city} />
         <BottomForm
           handleSelection={this.handleSelection}

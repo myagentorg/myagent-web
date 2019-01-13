@@ -17,10 +17,6 @@ const RichTextRenderer = ({ richTextContent }) => {
           TagType = 'span'
       }
 
-      if (textType === 'bold') {
-        TagType = 'strong'
-      }
-
       return <TagType key={text.value}>{text.value}</TagType>
     })
   }

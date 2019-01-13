@@ -14,8 +14,6 @@ const PersuasiveInfo = ({ cityData }) => {
     backgroundSize: 'cover'
   })
 
-  console.log(cityData.moreInfoText1 ? cityData.moreInfoText1.content : '')
-
   return (
     <div className="persuasive__groups">
       <div className="persuasive__group">

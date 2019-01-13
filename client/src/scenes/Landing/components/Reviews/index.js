@@ -2,60 +2,67 @@ import React from 'react'
 
 import Review from './components/Review'
 
-import fiveStars from '../../../../assets/5-stars.svg'
+import stars5 from '../../../../assets/5-stars.svg'
+import stars4 from '../../../../assets/4-stars.svg'
+import stars3 from '../../../../assets/3-stars.svg'
+import stars2 from '../../../../assets/2-stars.svg'
+import stars1 from '../../../../assets/1-star.svg'
 
 import './index.css'
 
-const Reviews = () => {
-    const reviews = [
-        {
-            name: 'Francine L.',
-            review:
-                'MyAgent.io connected me with a Realtor very quickly—within an hour of visiting their website—and the Realtor we had was second to none! We will recommend MyAgent.io to others and will use them again in the future.'
-        },
-        {
-            name: 'Darah J.',
-            review:
-                'I was shocked by how quick all communication was. I was concerned about the quality I’d receive as I was looking for an out-of-city agent, but I don’t think I could have found a better agent for my situation. We now have the perfect house that fits our needs!'
-        },
-        {
-            name: 'Tim D.',
-            review:
-                'The service was fast and effective! Within minutes, I was contacted by their representatives and put in contact with a very helpful agent. Great experience—wouldn’t hesitate to use MyAgent.io again in another city.'
-        }
-    ]
-    const mappedReviews = reviews.map((review, i) => (
-        <Review key={review.name + i} {...review} fiveStars={fiveStars} />
+const Reviews = ({ cityData }) => {
+  const featuredReview = cityData.reviews[0].fields
+
+  const reviews = cityData.reviews.map(review => ({
+    rating: review.fields.rating,
+    author: review.fields.author,
+    review: review.fields.review
+  }))
+
+  const starRating = rating => {
+    switch (rating) {
+      case 5:
+        return stars5
+      case 4:
+        return stars4
+      case 3:
+        return stars3
+      case 2:
+        return stars2
+      case 1:
+        return stars1
+      default:
+        return stars5
+    }
+  }
+
+  const mappedReviews = reviews
+    .slice(1)
+    .map((review, i) => (
+      <Review key={review.author} {...review} starRating={starRating} />
     ))
-    return (
-        <div className="utility-wrapper reviews">
-            <h2 className="reviews__title">
-                Home Buyers and Sellers Love MyAgent.io
-            </h2>
-            <div className="reviews__featured-review">
-                <img
-                    className="featured-review__stars"
-                    src={fiveStars}
-                    alt="Five stars."
-                />
-                <p className="featured-review__review">
-                    “Buying and selling a house is a life altering process.
-                    MyAgent.io allowed us to do both with very positive results
-                    from a perfect real estate professional. We highly recommend
-                    their services.”
-                    <span className="featured-review__credit">
-                        {' '}
-                        – <strong>Randy & Sue H.</strong>
-                    </span>
-                </p>
-            </div>
-            <div className="reviews__shopper-approved">
-                MyAgent.io has an overall satisfaction rating of 4.8 out of 5 on
-                ShopperApproved.com.
-            </div>
-            <div className="reviews__others">{mappedReviews}</div>
-        </div>
-    )
+
+  return (
+    <div className="utility-wrapper reviews">
+      <h2 className="reviews__title">{cityData.reviewsHeadline}</h2>
+      <div className="reviews__featured-review">
+        <img
+          className="featured-review__stars"
+          src={starRating(featuredReview.rating)}
+          alt="Five stars."
+        />
+        <p className="featured-review__review">
+          “{featuredReview.review}”
+          <span className="featured-review__credit">
+            {' '}
+            – <strong>{featuredReview.author}</strong>
+          </span>
+        </p>
+      </div>
+      <div className="reviews__shopper-approved">{cityData.reviewsSummary}</div>
+      <div className="reviews__others">{mappedReviews}</div>
+    </div>
+  )
 }
 
 export default Reviews
