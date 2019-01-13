@@ -17,6 +17,11 @@ const initialState = {
   ],
   topFormSearchBoxPlaceholder: 'Enter a city or neighborhood...',
   topFormCallToAction: 'Find Your Perfect Agent',
+  stepsHeadline:
+    "Here's how we've helped over 150,000 home buyers and sellers find their perfect real estate agent…",
+  moreInfoTitle1: 'You Deserve a Top Agent',
+  moreInfoTitle2:
+    'We Partner With Agents From the Top Brokerages Around the Country',
   loading: false
 }
 

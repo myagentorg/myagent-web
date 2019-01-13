@@ -73,8 +73,8 @@ class Landing extends Component {
           cityData={cityData}
           {...this.state}
         />
-        <HowAppWorks />
-        <PersuasiveInfo />
+        <HowAppWorks cityData={cityData} />
+        <PersuasiveInfo cityData={cityData} />
         <Reviews />
         <DetailedInfo city={cityData.city} />
         <BottomForm
