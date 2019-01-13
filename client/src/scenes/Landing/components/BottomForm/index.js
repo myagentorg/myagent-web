@@ -21,9 +21,7 @@ const BottomForm = ({
     <CustomFormContainer staticHeight>
       <h2>{cityData.bottomFormTitle}</h2>
       {cityData.bottomFormParagraph ? (
-        <RichTextRenderer
-          richTextContent={cityData.bottomFormParagraph.content}
-        />
+        <RichTextRenderer richTextContent={cityData.bottomFormParagraph} />
       ) : (
         <p>
           Our service is 100% free to use for home buyers and sellers.

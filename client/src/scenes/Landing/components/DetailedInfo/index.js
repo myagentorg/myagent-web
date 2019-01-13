@@ -18,7 +18,7 @@ const DetailedInfo = ({ cityData }) => {
                   <div className="detailed-info__content">
                     {
                       <RichTextRenderer
-                        richTextContent={detailedText.fields.bodyText.content}
+                        richTextContent={detailedText.fields.bodyText}
                       />
                     }
                   </div>

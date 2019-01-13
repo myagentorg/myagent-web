@@ -8,6 +8,7 @@ import Warning from '../../../../components/Warning'
 import Button from '../../../../components/Button'
 
 import './index.css'
+import RichTextRenderer from '../../../../components/RichTextRenderer'
 
 const MainForm = ({
   address,
@@ -22,11 +23,11 @@ const MainForm = ({
     <FormContainer staticHeight insetShadow cityImage={cityData.mainImage}>
       <h2>{cityData.topFormTitle}</h2>
       <div>
-        {cityData.topFormParagraph.content
-          ? cityData.topFormParagraph.content.map(p => (
-              <p key={p.content[0].value}>{p.content[0].value}</p>
-            ))
-          : cityData.topFormParagraph.map(p => <p key={p}>{p}</p>)}
+        {cityData.topFormParagraph.content ? (
+          <RichTextRenderer richTextContent={cityData.topFormParagraph} />
+        ) : (
+          cityData.topFormParagraph.map(p => <p key={p}>{p}</p>)
+        )}
       </div>
       <div className="landing__input-n-form">
         <SearchBox

@@ -24,9 +24,7 @@ const HowAppWorks = ({ cityData }) => {
             />
             <span className="step__number">1</span>
             {cityData.stepsStepOne && cityData.stepsStepOne.content ? (
-              <RichTextRenderer
-                richTextContent={cityData.stepsStepOne.content}
-              />
+              <RichTextRenderer richTextContent={cityData.stepsStepOne} />
             ) : (
               <div>
                 Tell us about the property you’re selling or your dream home.
@@ -44,9 +42,7 @@ const HowAppWorks = ({ cityData }) => {
             />
             <span className="step__number">2</span>
             {cityData.stepsStepTwo && cityData.stepsStepTwo.content ? (
-              <RichTextRenderer
-                richTextContent={cityData.stepsStepTwo.content}
-              />
+              <RichTextRenderer richTextContent={cityData.stepsStepTwo} />
             ) : (
               <div>
                 We analyze your information and compare it to our proprietary
@@ -65,9 +61,7 @@ const HowAppWorks = ({ cityData }) => {
             />
             <span className="step__number">3</span>
             {cityData.stepsStepThree && cityData.stepsStepThree.content ? (
-              <RichTextRenderer
-                richTextContent={cityData.stepsStepThree.content}
-              />
+              <RichTextRenderer richTextContent={cityData.stepsStepThree} />
             ) : (
               <div>
                 Our agent specialists personally review every request and will

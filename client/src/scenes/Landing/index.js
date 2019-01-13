@@ -67,8 +67,11 @@ class Landing extends Component {
 
     return (
       <React.Fragment>
-        {/* <Helmet>
-        </Helmet> */}
+        {/* {cityData.metaData && (
+          <Helmet
+          >
+          </Helmet>
+        )} */}
         <MainForm
           handleSelection={this.handleSelection}
           handleClick={this.handleClick}

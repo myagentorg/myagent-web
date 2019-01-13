@@ -7,6 +7,12 @@ import image2 from '../../../../assets/info-section-2.jpg'
 import './index.css'
 
 const PersuasiveInfo = ({ cityData }) => {
+  const moreInfoImage1 = cityData.moreInfoImage1
+    ? cityData.moreInfoImage1.fields.file.url
+    : image1
+  const moreInfoImage2 = cityData.moreInfoImage2
+    ? cityData.moreInfoImage1.fields.file.url
+    : image2
   const getStyle = image => ({
     height: '300px',
     width: '100%',
@@ -20,16 +26,14 @@ const PersuasiveInfo = ({ cityData }) => {
         <div
           className="persuasive__image"
           style={{
-            ...getStyle(cityData.imageOne || image1),
+            ...getStyle(moreInfoImage1),
             backgroundPosition: '55% 30%'
           }}
         />
         <div className="utility-wrapper persuasive__text-content">
           <h3>{cityData.moreInfoTitle1}</h3>
           {cityData.moreInfoText1 ? (
-            <RichTextRenderer
-              richTextContent={cityData.moreInfoText1.content}
-            />
+            <RichTextRenderer richTextContent={cityData.moreInfoText1} />
           ) : (
             <div>
               <p>
@@ -61,16 +65,14 @@ const PersuasiveInfo = ({ cityData }) => {
         <div
           className="persuasive__image"
           style={{
-            ...getStyle(cityData.imageTwo || image2),
+            ...getStyle(moreInfoImage2),
             backgroundPosition: '60% 10%'
           }}
         />
         <div className="utility-wrapper persuasive__text-content">
           <h3>{cityData.moreInfoTitle2}</h3>
           {cityData.moreInfoText2 ? (
-            <RichTextRenderer
-              richTextContent={cityData.moreInfoText2.content}
-            />
+            <RichTextRenderer richTextContent={cityData.moreInfoText2} />
           ) : (
             <div>
               <p>
