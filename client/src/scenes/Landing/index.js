@@ -81,6 +81,7 @@ class Landing extends Component {
           handleSelection={this.handleSelection}
           handleClick={this.handleClick}
           handleChange={this.handleChange}
+          cityData={cityData}
           {...this.state}
         />
         <Footer />

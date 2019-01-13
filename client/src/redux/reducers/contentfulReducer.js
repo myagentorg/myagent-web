@@ -59,6 +59,9 @@ const initialState = {
       }
     }
   ],
+  bottomFormTitle: 'MyAgent.io is Fast, Free, and Easy',
+  bottomFormPlaceholder: 'Enter a city or neighborhood...',
+  bottomFormCallToAction: 'Find Your Perfect Agent',
   loading: false
 }
 
