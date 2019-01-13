@@ -4,7 +4,6 @@ import RichTextRenderer from '../../../../components/RichTextRenderer'
 import './index.css'
 
 const DetailedInfo = ({ cityData }) => {
-  console.log(cityData)
   return (
     <section className="detailed-info">
       <div className="detailed-info__wrapper">
