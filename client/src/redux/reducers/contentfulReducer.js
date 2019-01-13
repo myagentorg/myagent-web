@@ -9,6 +9,10 @@ const client = contentful.createClient({
 const initialState = {
   city: 'Your City',
   path: '/',
+  metaTitle:
+    'Find Top Real Estate Agents | Buy a Home — Sell Your Home | MyAgent.io',
+  metaDescription:
+    'MyAgent.io is a free service that helps you find a top-performing agent you can trust. We partner with Only the Top Real Estate Agents From the Top Real Estate Brokerages.',
   mainImage: null,
   topFormTitle: 'Find Top Real Estate Agents in Your City',
   topFormParagraph: [

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-// import Helmet from 'react-helmet'
+import Helmet from 'react-helmet'
 import { Redirect } from 'react-router-dom'
 
 import { connect } from 'react-redux'
@@ -67,11 +67,10 @@ class Landing extends Component {
 
     return (
       <React.Fragment>
-        {/* {cityData.metaData && (
-          <Helmet
-          >
-          </Helmet>
-        )} */}
+        <Helmet>
+          <title>{cityData.metaTitle}</title>
+          <meta name="Description" content={cityData.metaDescription} />
+        </Helmet>
         <MainForm
           handleSelection={this.handleSelection}
           handleClick={this.handleClick}
