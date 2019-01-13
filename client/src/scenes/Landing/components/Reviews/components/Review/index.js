@@ -3,7 +3,6 @@ import React from 'react'
 import './index.css'
 
 const Review = ({ author, review, rating, starRating }) => {
-  console.log(author)
   return (
     <div className="review">
       <img
